@@ -1559,6 +1559,16 @@
   "resolved" "https://registry.npmjs.org/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz"
   "version" "2.0.4"
 
+"@next/env@13.0.2":
+  "integrity" "sha512-Qb6WPuRriGIQ19qd6NBxpcrFOfj8ziN7l9eZUfwff5gl4zLXluqtuZPddYZM/oWjN53ZYcuRXzL+oowKyJeYtA=="
+  "resolved" "https://registry.npmjs.org/@next/env/-/env-13.0.2.tgz"
+  "version" "13.0.2"
+
+"@next/swc-darwin-arm64@13.0.2":
+  "integrity" "sha512-1zGIOkInkOLRv0QQGZ+3wffYsyKI4vIy62LYTvDWUn7TAYqnmXwougp9NSLqDeagLwgsv2URrykyAFixA/YqxA=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-13.0.2.tgz"
+  "version" "13.0.2"
+
 "@nextui-org/react@^1.0.0-beta.10":
   "integrity" "sha512-cxqsp4QXmKJoiDeoeEmayn3LUgRrHvOhmvfv8fm65CdWZI5Ro18DwBQrD+mdttlZ/OEaiYQXDPSP36p2DALdag=="
   "resolved" "https://registry.npmjs.org/@nextui-org/react/-/react-1.0.0-beta.10.tgz"
@@ -2451,6 +2461,13 @@
     "@svgr/plugin-jsx" "^5.5.0"
     "@svgr/plugin-svgo" "^5.5.0"
     "loader-utils" "^2.0.0"
+
+"@swc/helpers@0.4.11":
+  "integrity" "sha512-rEUrBSGIoSFuYxwBYtlUFMlE2CwGhmW+w9355/5oduSw8e5h2+Tj4UrAGNNgP9915++wj5vkQo0UuOBqOAq4nw=="
+  "resolved" "https://registry.npmjs.org/@swc/helpers/-/helpers-0.4.11.tgz"
+  "version" "0.4.11"
+  dependencies:
+    "tslib" "^2.4.0"
 
 "@testing-library/dom@^8.5.0", "@testing-library/dom@>=7.21.4":
   "integrity" "sha512-XEV2mBxgv6DKjL3+U3WEUzBgT2CjYksoXGlLrrJXYP8OvRfGkBonvelkorazpFlp8tkEecO06r43vN4DIEyegQ=="
@@ -3689,10 +3706,10 @@
     "lodash.memoize" "^4.1.2"
     "lodash.uniq" "^4.5.0"
 
-"caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001370", "caniuse-lite@^1.0.30001373":
-  "integrity" "sha512-mWvzatRx3w+j5wx/mpFN5v5twlPrabG8NqX2c6e45LCpymdoGqNvRkRutFUqpRTXKFQFNQJasvK0YT7suW6/Hw=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001374.tgz"
-  "version" "1.0.30001374"
+"caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001370", "caniuse-lite@^1.0.30001373", "caniuse-lite@^1.0.30001406":
+  "integrity" "sha512-zBUoFU0ZcxpvSt9IU66dXVT/3ctO1cy4y9cscs1szkPlcWb6pasYM144GqrUygUbT+k7cmUCW61cvskjcv0enQ=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001431.tgz"
+  "version" "1.0.30001431"
 
 "case-sensitive-paths-webpack-plugin@^2.4.0":
   "integrity" "sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw=="
@@ -3784,6 +3801,11 @@
   "version" "5.3.1"
   dependencies:
     "source-map" "~0.6.0"
+
+"client-only@0.0.1":
+  "integrity" "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
+  "resolved" "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
+  "version" "0.0.1"
 
 "cliui@^7.0.2":
   "integrity" "sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ=="
@@ -6994,6 +7016,32 @@
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
 
+"next@^13.0.2":
+  "integrity" "sha512-uQ5z5e4D9mOe8+upy6bQdYYjo/kk1v3jMW87kTy2TgAyAsEO+CkwRnMgyZ4JoHEnhPZLHwh7dk0XymRNLe1gFw=="
+  "resolved" "https://registry.npmjs.org/next/-/next-13.0.2.tgz"
+  "version" "13.0.2"
+  dependencies:
+    "@next/env" "13.0.2"
+    "@swc/helpers" "0.4.11"
+    "caniuse-lite" "^1.0.30001406"
+    "postcss" "8.4.14"
+    "styled-jsx" "5.1.0"
+    "use-sync-external-store" "1.2.0"
+  optionalDependencies:
+    "@next/swc-android-arm-eabi" "13.0.2"
+    "@next/swc-android-arm64" "13.0.2"
+    "@next/swc-darwin-arm64" "13.0.2"
+    "@next/swc-darwin-x64" "13.0.2"
+    "@next/swc-freebsd-x64" "13.0.2"
+    "@next/swc-linux-arm-gnueabihf" "13.0.2"
+    "@next/swc-linux-arm64-gnu" "13.0.2"
+    "@next/swc-linux-arm64-musl" "13.0.2"
+    "@next/swc-linux-x64-gnu" "13.0.2"
+    "@next/swc-linux-x64-musl" "13.0.2"
+    "@next/swc-win32-arm64-msvc" "13.0.2"
+    "@next/swc-win32-ia32-msvc" "13.0.2"
+    "@next/swc-win32-x64-msvc" "13.0.2"
+
 "no-case@^3.0.4":
   "integrity" "sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg=="
   "resolved" "https://registry.npmjs.org/no-case/-/no-case-3.0.4.tgz"
@@ -7948,6 +7996,15 @@
     "picocolors" "^0.2.1"
     "source-map" "^0.6.1"
 
+"postcss@8.4.14":
+  "integrity" "sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.14.tgz"
+  "version" "8.4.14"
+  dependencies:
+    "nanoid" "^3.3.4"
+    "picocolors" "^1.0.0"
+    "source-map-js" "^1.0.2"
+
 "prelude-ls@^1.2.1":
   "integrity" "sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g=="
   "resolved" "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
@@ -8233,7 +8290,7 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.3.0", "react@>=16.8", "react@>=16.8.0":
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.3.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.8", "react@>=16.8.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
@@ -8999,6 +9056,13 @@
   "resolved" "https://registry.npmjs.org/style-loader/-/style-loader-3.3.1.tgz"
   "version" "3.3.1"
 
+"styled-jsx@5.1.0":
+  "integrity" "sha512-/iHaRJt9U7T+5tp6TRelLnqBqiaIT0HsO0+vgyj8hK2KUk7aejFqRrumqPUlAqDwAj8IbS/1hk3IhBAAK/FCUQ=="
+  "resolved" "https://registry.npmjs.org/styled-jsx/-/styled-jsx-5.1.0.tgz"
+  "version" "5.1.0"
+  dependencies:
+    "client-only" "0.0.1"
+
 "stylehacks@^5.1.0":
   "integrity" "sha512-SzLmvHQTrIWfSgljkQCw2++C9+Ne91d/6Sp92I8c5uHTcy/PgeHamwITIbBW9wnFTY/3ZfSXR9HIL6Ikqmcu6Q=="
   "resolved" "https://registry.npmjs.org/stylehacks/-/stylehacks-5.1.0.tgz"
@@ -9261,7 +9325,7 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.0.3", "tslib@2.4.0":
+"tslib@^2.0.3", "tslib@^2.4.0", "tslib@2.4.0":
   "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   "version" "2.4.0"
@@ -9418,6 +9482,11 @@
   "version" "4.4.1"
   dependencies:
     "punycode" "^2.1.0"
+
+"use-sync-external-store@1.2.0":
+  "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
+  "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
+  "version" "1.2.0"
 
 "util-deprecate@^1.0.1", "util-deprecate@^1.0.2", "util-deprecate@~1.0.1":
   "integrity" "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
