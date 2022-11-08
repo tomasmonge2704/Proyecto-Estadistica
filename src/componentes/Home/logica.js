@@ -49,7 +49,7 @@ export default function Logica() {
         }else {
             setResult(prevState => ({
                 ...prevState,
-                type:"Normal"
+                type:"Distribucion Normal"
     
             }))
         }
