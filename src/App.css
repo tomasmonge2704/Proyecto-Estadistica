@@ -1,0 +1,16 @@
+.contenedorInicio {
+display: flex;
+justify-content: space-evenly;
+align-content: center;
+margin: 3%;
+}
+
+ /* For Mobile Phones Portrait or Landscape View */
+ @media screen and (max-device-width: 640px) {
+  .contenedorInicio{
+    flex-wrap: wrap;
+  }
+  .resultado{
+    margin-top: 10%;
+  }
+}
