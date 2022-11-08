@@ -1,5 +1,5 @@
 import Intervalo_de_confianza from './intervalo_confianza'
-import Logica from './logica';
+import Logica from './getDatos';
 export default function Inicio() {
 
   return (
