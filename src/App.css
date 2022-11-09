@@ -12,11 +12,12 @@ margin: 3%;
  @media screen and (max-device-width: 640px) {
   .contenedorInicio{
     flex-wrap: wrap;
-    margin: 8%;
+    padding: 8%;
   }
   .contenedorTabla{
     margin-left: 8%;
     margin-right: 8%;
+    margin-bottom: 8%;
   }
   .resultado{
     margin-top: 10%;
