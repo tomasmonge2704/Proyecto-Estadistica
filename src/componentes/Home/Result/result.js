@@ -1,7 +1,7 @@
 import { Spacer, Card, Text, Button } from "@nextui-org/react";
 export default function Result({ result }) {
     return (
-        <Card css={{ mw: "500px" }} className="resultado">
+        <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="resultado">
             <Card.Body>
 
                 <Text h1 size={40}

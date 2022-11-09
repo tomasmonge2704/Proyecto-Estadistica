@@ -1,5 +1,5 @@
 import { Spacer, Card, Text, Input, Button, Modal, Row, Grid } from "@nextui-org/react";
-import ModalTipoDeDatos from "./modalTipoDeDatos";
+import ModalTipoDeDatos from "../modal/modalTipoDeDatos";
 import React from "react";
 export default function Intervalo_de_confianza() {
     const [visible, setVisible] = React.useState(false);
@@ -22,7 +22,7 @@ export default function Intervalo_de_confianza() {
     ];
     return (
         <>
-            <Card css={{ mw: "500px" }}>
+            <Card isHoverable variant="bordered" css={{ mw: "500px" }}>
                 <Card.Body>
                     <Text h1 size={40}
                         css={{
