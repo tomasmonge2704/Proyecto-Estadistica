@@ -1,6 +1,14 @@
-import { Spacer, Card, Text, Button } from "@nextui-org/react";
+import { Spacer, Card, Text, Button,Modal } from "@nextui-org/react";
+import React from "react";
+import ModalFormulas from "../modal/modalFormulas";
 export default function Result({ result }) {
+    const [visible, setVisible] = React.useState(false);
+    const handler = () => setVisible(true);
+    const closeHandler = () => {
+        setVisible(false);
+    };
     return (
+    <>
         <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="resultado">
             <Card.Body>
 
@@ -17,12 +25,30 @@ export default function Result({ result }) {
                         <Spacer y={1} />
                         <Text size="$xs">{result.resultado}</Text>
                     </Text>
-                        <Button shadow color="gradient" auto>
+                        <Button shadow color="gradient" auto onClick={handler}>
                             Ver formulas
                         </Button></>
                 )
                     : (<Text blockquote>Completar datos.</Text>)}
             </Card.Body>
         </Card>
+        <Modal
+        closeButton
+        blur
+        preventClose
+        aria-labelledby="modal-title"
+        open={visible}
+        onClose={closeHandler}
+    >
+        <Modal.Header>
+            <Text id="modal-title" size={18}>
+                Formulas
+            </Text>
+        </Modal.Header>
+        <Modal.Body>
+            <ModalFormulas/>
+        </Modal.Body>
+    </Modal>
+    </>
     )
 }

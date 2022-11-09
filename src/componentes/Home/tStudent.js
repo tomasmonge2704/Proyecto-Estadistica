@@ -2,8 +2,8 @@
     if(valores == undefined){
         valores = []
     }
-    let xiCuadrado = 0
-    let xFija = 0
+    let xiCuadrado = NaN
+    let xFija = NaN
     valores.forEach( e => {
         xiCuadrado = Math.pow(Number(e.value),2) + xiCuadrado
         xFija = xFija + Number(e.value)
