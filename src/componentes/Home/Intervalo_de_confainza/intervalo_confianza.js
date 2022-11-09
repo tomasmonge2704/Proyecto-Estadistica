@@ -45,6 +45,7 @@ export default function Intervalo_de_confianza() {
             <Modal
                 closeButton
                 blur
+                preventClose
                 aria-labelledby="modal-title"
                 open={visible}
                 onClose={closeHandler}
