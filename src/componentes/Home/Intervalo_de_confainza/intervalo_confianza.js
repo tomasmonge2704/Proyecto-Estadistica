@@ -3,9 +3,10 @@ import ModalTipoDeDatos from "./modalTipoDeDatos";
 import React from "react";
 export default function Intervalo_de_confianza() {
     const [visible, setVisible] = React.useState(false);
+    const [type, setType] = React.useState(false);
     const [visibleInputs, setVisibleInputs] = React.useState(false);
     const handler = () => setVisible(true);
-    const handlerInputs = () => setVisibleInputs(true);
+    const handlerInputs = (title) => {setVisibleInputs(true); setType(title)};
     const closeHandler = () => {
         setVisible(false);
     };
@@ -57,11 +58,10 @@ export default function Intervalo_de_confianza() {
                     </Text>
                 </Modal.Header>
                 <Modal.Body>
-
-                    {visibleInputs == true ? (<ModalTipoDeDatos/>) : (
+                    {visibleInputs == true ? (<ModalTipoDeDatos tipoDeDato={type}/>) : (
                         list.map((item, index) => (
                                 <Grid xs={12} sm={12} key={index}>
-                                    <Card isPressable onClick={handlerInputs}>
+                                    <Card isPressable onClick={() => handlerInputs(item.title)}>
                                         <Card.Body css={{ p: 0 }}>
                                             <Card.Image
                                                 src={item.img}
