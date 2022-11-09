@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Login from './componentes/login/login';
 function App() {
+  sessionStorage.setItem('datos', JSON.stringify({}));
   return (
     <NextUIProvider>
       <BrowserRouter>
