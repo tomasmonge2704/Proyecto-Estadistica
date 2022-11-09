@@ -1,6 +1,6 @@
 import Result from "./result"
 import { tStudentResultado, tStudentFormula } from "../tStudent";
-
+import {DistribucionNormalResultado,DistribucionNormalFormula} from "../distribucionNormal";
 export default function Logica({datos}) {
     if(Object.keys(datos).length !== 0){
         if(datos.N <= 30 && datos.desvio == 0 || datos.desvio == undefined){
@@ -10,6 +10,8 @@ export default function Logica({datos}) {
             datos.resultado = tStudentResultado(datos.media, datos.N,datos.valores,datos.confianza)
         }else{
             datos.type = "Distribucion Normal"
+            datos.formula = DistribucionNormalFormula(datos.media,datos.N)
+            datos.resultado = DistribucionNormalResultado(datos.media, datos.N,datos.desvio,datos.confianza)
         }
     }
    

@@ -7,6 +7,9 @@ export default function TablaDatos({valores}) {
   if(valores !== []){
     valores = JSON.parse(sessionStorage.getItem('datos')).valores
   }
+  if(valores == undefined){
+    valores = []
+  }
   return (
     <Table
       aria-label="Example table with static content"
