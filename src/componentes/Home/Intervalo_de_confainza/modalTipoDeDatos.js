@@ -8,7 +8,9 @@ export default function ModalTipoDeDatos() {
     if(datos.valores == undefined){
       datos.valores = []
     }
-    datos.valores.push(document.getElementById('valor').value)
+    const nuevoDato = {value:Number(document.getElementById('valor').value)}
+    nuevoDato.id = datos.valores.length + 1
+    datos.valores.push(nuevoDato)
     setValores(datos.valores)
     sessionStorage.setItem('datos', JSON.stringify(datos))
     window.dispatchEvent(new Event("storage"));

@@ -4,12 +4,19 @@ justify-content: space-evenly;
 align-content: center;
 margin: 3%;
 }
-
+.contenedorTabla{
+  margin-left: 12%;
+  margin-right: 12%;
+}
  /* For Mobile Phones Portrait or Landscape View */
  @media screen and (max-device-width: 640px) {
   .contenedorInicio{
     flex-wrap: wrap;
     margin: 8%;
+  }
+  .contenedorTabla{
+    margin-left: 8%;
+    margin-right: 8%;
   }
   .resultado{
     margin-top: 10%;

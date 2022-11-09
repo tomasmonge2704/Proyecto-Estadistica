@@ -21,7 +21,7 @@ export default function Intervalo_de_confianza() {
     ];
     return (
         <>
-            <Card css={{ mw: "400px" }}>
+            <Card css={{ mw: "500px" }}>
                 <Card.Body>
                     <Text h1 size={40}
                         css={{

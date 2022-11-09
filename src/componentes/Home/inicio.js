@@ -14,7 +14,7 @@ export default function Inicio() {
       <Intervalo_de_confianza/>
       <GetDatos/>
     </div>
-    {valores.length !== 0 ? (<div style={{margin:"8%"}}>
+    {valores.length !== 0 ? (<div className='contenedorTabla'>
     <TablaDatos valores={valores}/>
     </div>) : (<></>)}
     </>
