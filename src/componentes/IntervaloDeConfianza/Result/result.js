@@ -21,9 +21,13 @@ export default function Result({ result }) {
                 {Object.keys(result).length !== 0 ? (
                     <><Text blockquote css={{ textAlign: "center" }}>Se resuelve con {result.type}<hr />
                         <Spacer y={1} />
-                        {result.formula}
-                        <Spacer y={1} />
-                        <Text size="$xs">{result.resultado}</Text>
+                        {result.resultado.pasos.map(e => (
+                            <>
+                               <Text>{e}</Text>
+                               <Spacer y={1} />
+                            </>
+                        ))}
+                        <Text>{result.resultado.resultado}</Text>
                     </Text>
                         <Button shadow color="gradient" auto onClick={handler}>
                             Ver formulas
