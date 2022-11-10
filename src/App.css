@@ -1,3 +1,10 @@
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px;
+	}
+}
 .contenedorInicio {
 display: flex;
 justify-content: space-evenly;
@@ -17,7 +24,7 @@ margin: 3%;
   .contenedorTabla{
     margin-left: 8%;
     margin-right: 8%;
-    margin-bottom: 8%;
+    margin-bottom: 15%;
   }
   .resultado{
     margin-top: 10%;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ConfianzaInicio from './componentes/IntervaloDeConfianza/inicio';
 import Inicio from './componentes/Home/inicio';
 import './App.css';
 import { NextUIProvider } from '@nextui-org/react';
@@ -13,7 +14,8 @@ function App() {
     <NextUIProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Inicio/>} />
+          <Route exact path="/" element={<Inicio/>} />
+          <Route exact path="/confianza" element={<ConfianzaInicio/>} />
         </Routes>
       </BrowserRouter>
     </NextUIProvider>
