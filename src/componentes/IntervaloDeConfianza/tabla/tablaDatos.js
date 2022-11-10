@@ -20,16 +20,20 @@ export default function TablaDatos({valores}) {
       }}
     >
       <Table.Header>
+        <Table.Column>N</Table.Column>
         <Table.Column>Xi</Table.Column>
         <Table.Column>Xi²</Table.Column>
+        <Table.Column>Frecuencia</Table.Column>
         <Table.Column></Table.Column>
       </Table.Header>
       <Table.Body>
         {
           valores.map((item, index) => (
             <Table.Row key={index}>
+              <Table.Cell>{index + 1}</Table.Cell>
               <Table.Cell>{item.value}</Table.Cell>
               <Table.Cell>{Math.pow(item.value, 2)}</Table.Cell>
+              <Table.Cell>{item.frecuencia}</Table.Cell>
               <Table.Cell>
                 <IconButton onClick={async () => {
                   const datos = await JSON.parse(sessionStorage.getItem('datos')); 

@@ -9,10 +9,10 @@ export default function ModalTipoDeDatos({ tipoDeDato }) {
       datos.valores = []
     }
     let nuevoDato = 0
-    if(tipoDeDato == "Agrupados"){
-      nuevoDato = { value: (Number(document.getElementById('valor1').value) + Number(document.getElementById('valor2').value)) / 2 }
+    if(tipoDeDato == "Agrupados en intervalos"){
+      nuevoDato = { value: (Number(document.getElementById('valor1').value) + Number(document.getElementById('valor2').value)) / 2,frecuencia:Number(document.getElementById('valor3').value)}
     }else{
-      nuevoDato = { value: Number(document.getElementById('valor').value) }
+      nuevoDato = { value: Number(document.getElementById('valor').value),frecuencia:1 }
     }
     nuevoDato.id = datos.valores.length + 1
     datos.valores.push(nuevoDato)
@@ -24,7 +24,7 @@ export default function ModalTipoDeDatos({ tipoDeDato }) {
     <div css={{
       Width: "100%",
     }}>
-      {tipoDeDato !== "Agrupados" ? (
+      {tipoDeDato !== "Agrupados en intervalos" ? (
         <Grid.Container gap={2} justify="center" alignItems="flex-end">
           <Grid xs={6}>
             <Input label="Agregar Dato" placeholder="Ej: 9" type="number" size="lg" id="valor" />
@@ -46,6 +46,9 @@ export default function ModalTipoDeDatos({ tipoDeDato }) {
           </Grid>
           <Grid xs={5}>
             <Input label="Valor Maximo" placeholder="200" type="number" size="lg" id="valor2" />
+          </Grid>
+          <Grid xs={12}>
+            <Input label="Frecuencia" placeholder="Ej: 3" type="number" fullWidth size="lg" id="valor3"/>
           </Grid>
           <Grid xs={12}>
             <Button shadow color="success" css={{width:"100%"}} auto onClick={updateValueMedia}>

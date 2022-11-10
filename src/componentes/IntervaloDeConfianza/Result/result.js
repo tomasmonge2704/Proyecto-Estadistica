@@ -16,7 +16,7 @@ export default function Result({ result }) {
                     css={{
                         textGradient: "45deg, $blue600 -20%, $pink600 50%",
                     }}
-                    weight="bold">Resultado</Text>
+                    weight="bold">Resultados</Text>
                 <Spacer y={1} />
                 {Object.keys(result).length !== 0 ? (
                     <><Text blockquote css={{ textAlign: "center" }}>Se resuelve con {result.type}<hr />

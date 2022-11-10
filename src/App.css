@@ -12,8 +12,8 @@ align-content: center;
 margin: 3%;
 }
 .contenedorTabla{
-  margin-left: 12%;
-  margin-right: 12%;
+  margin-left: 9%;
+  margin-right: 9%;
 }
  /* For Mobile Phones Portrait or Landscape View */
  @media screen and (max-device-width: 640px) {
@@ -24,9 +24,6 @@ margin: 3%;
   .contenedorTabla{
     margin-left: 8%;
     margin-right: 8%;
-    margin-bottom: 15%;
-  }
-  .cardConfianza{
     margin-bottom: 15%;
   }
   .ModalDatos{
