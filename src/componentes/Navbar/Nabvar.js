@@ -1,4 +1,4 @@
-import { Navbar, Link, Text, Avatar, Dropdown } from "@nextui-org/react";
+import { Navbar, Link, Text, Avatar, Dropdown,Spacer } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo.js";
 export default function NavBar () {
     const collapseItems = [
@@ -104,6 +104,7 @@ export default function NavBar () {
               >
                 {item.nombre}
               </Link>
+            <Spacer y={2.5} />
             </Navbar.CollapseItem>
           ))}
         </Navbar.Collapse>

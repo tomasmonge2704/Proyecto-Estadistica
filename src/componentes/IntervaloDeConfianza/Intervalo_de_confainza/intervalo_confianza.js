@@ -12,17 +12,17 @@ export default function Intervalo_de_confianza() {
     };
     const list = [
         {
-            title: "Agrupados",
-            img: "https://i0.wp.com/lasmatesfaciles.com/wp-content/uploads/2021/05/image-22.png?resize=840%2C472&ssl=1"
+            title: "Agrupados en intervalos",
+            img: "https://i.ytimg.com/vi/CuKr7GzohbI/maxresdefault.jpg"
         },
         {
             title: "Sueltos",
-            img: "https://cdn.pruebat.org/video/9cH1csY4Ns4/portada.png"
+            img: "https://seactuario.com/ContMatematicas/ProbEstadistica/ImagesProbab/EjercFrecAgrup.png"
         }
     ];
     return (
         <>
-            <Card isHoverable variant="bordered" css={{ mw: "500px" }}>
+            <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="cardConfianza">
                 <Card.Body>
                     <Text h1 size={40}
                         css={{
