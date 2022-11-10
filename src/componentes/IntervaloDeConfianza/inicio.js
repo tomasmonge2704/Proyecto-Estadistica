@@ -5,15 +5,16 @@ import Intervalo_de_confianza from './Intervalo_de_confainza/intervalo_confianza
 import NavBar from '../Navbar/Nabvar';
 export default function ConfianzaInicio() {
   const [valores, setValores] = React.useState([]);
+  let datos = {}
   window.addEventListener('storage', () => {
-    const datos = JSON.parse(sessionStorage.getItem('datos'));
+    datos = JSON.parse(sessionStorage.getItem('datos'));
     setValores(datos.valores)
   })
   return (
     <>
     <NavBar/>
     <div className="contenedorInicio">
-      <Intervalo_de_confianza/>
+      <Intervalo_de_confianza datos={datos}/>
       <GetDatos/>
     </div>
     {valores.length !== 0 ? (<div className='contenedorTabla'>

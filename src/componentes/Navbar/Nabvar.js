@@ -27,12 +27,9 @@ export default function NavBar () {
           hideIn="xs"
           variant="highlight-rounded"
         >
-          <Navbar.Link href="#">Features</Navbar.Link>
-          <Navbar.Link isActive href="#">
-            Customers
-          </Navbar.Link>
-          <Navbar.Link href="#">Pricing</Navbar.Link>
-          <Navbar.Link href="#">Company</Navbar.Link>
+       {collapseItems.map((item, index) => (
+            <Navbar.Link href={item.href} key={index}>{item.nombre}</Navbar.Link>
+          ))}
         </Navbar.Content>
         <Navbar.Content
           css={{

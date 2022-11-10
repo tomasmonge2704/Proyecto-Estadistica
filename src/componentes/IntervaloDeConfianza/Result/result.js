@@ -39,8 +39,8 @@ export default function Result({ result }) {
         aria-labelledby="modal-title"
         open={visible}
         onClose={closeHandler}
-        css={{margin:"11%"}}
-    >
+        className="ModalDatos"
+        >
         <Modal.Header>
             <Text id="modal-title" size={18}>
                 Formulas
