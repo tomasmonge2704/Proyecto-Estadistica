@@ -4,12 +4,6 @@ import { DeleteIcon } from "./DeleteIcon";
 import { IconButton } from "./IconButton";
 
 export default function TablaDatos({valores}) {
-  if(valores !== []){
-    valores = JSON.parse(sessionStorage.getItem('datos')).valores
-  }
-  if(valores == undefined){
-    valores = []
-  }
   return (
     <Table
     isHoverable variant="bordered"

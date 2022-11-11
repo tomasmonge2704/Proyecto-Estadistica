@@ -11,6 +11,13 @@ export default function Intervalo_de_confianza({ datos }) {
     const closeHandler = () => {
         setVisible(false);
     };
+    function obtenerMedia(){
+        let media = 0
+        datos.valores.forEach( e => {
+            media = media + Number(e.value)
+            });
+        return media / datos.valores.length
+    }
     const list = [
         {
             title: "Agrupados en intervalos",
@@ -33,25 +40,30 @@ export default function Intervalo_de_confianza({ datos }) {
                     <Spacer y={1} />
                     <Grid.Container gap={2}>
                         <Grid>
-                            <Switch shadow color="success" checked={normal} id="distribucion" onChange={(e) =>setNormal(e.target.checked)} />
+                            <Switch shadow color="success" checked={normal} id="distribucion" onChange={(e) => setNormal(e.target.checked)} />
                         </Grid>
                         <Grid>
                             <Text h3>{normal == true ? "Distribucion Normal" : "Distribucion No Normal"}</Text>
                         </Grid>
                     </Grid.Container>
-                    <Input id='media' type="number" label="Media de la muestra" />
+                    <Grid.Container gap={2}>
+                        <Grid xs={6}>
+                        <Input id='desvio' type="number" label="Desvio(√varianza)"/>
+                        </Grid>
+                        <Grid xs={6}>
+                        <Input id='varianza' type="number" label="Varianza"/>
+                        </Grid>
+                    </Grid.Container>
                     <Spacer y={1} />
-                    <Input id='desvio' type="number" label="Desvio" />
+                    <Input id='media' type="number" label="Media de la muestra"/>
                     <Spacer y={1} />
-                    <Input id='N' type="number" label="Tamaño de muestra" />
+                    <Input id='N' type="number" label="Tamaño de muestra"/>
                     <Spacer y={1} />
                     <Input id='confianza' type="number" label="Nivel de Confianza" />
                     <Spacer y={1} />
-                    <Text>Si No tenes la Media...</Text>
-                    <Spacer y={1} />
-                    <Button shadow color="success" auto onClick={handler}>
+                    {!datos.desvio && datos.confianza && datos.distribucion=="Normal"? (<Button shadow color="success" auto onClick={handler}>
                         Agregar Valores
-                    </Button>
+                    </Button>) : (<></>)}
                 </Card.Body>
             </Card>
             <Modal

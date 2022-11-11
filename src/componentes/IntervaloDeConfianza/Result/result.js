@@ -18,14 +18,14 @@ export default function Result({ result }) {
                     }}
                     weight="bold">Resultados</Text>
                 <Spacer y={1} />
-                {result.media || result.desvio || result.N || result.confianza ? (
+                {result.resultado ? (
                     <><Text blockquote css={{ textAlign: "center" }}>Se resuelve con {result.type}<hr />
                         <Spacer y={1} />
-                        {result.resultado.pasos.map(e => (
-                            <>
+                        {result.resultado.pasos.map((e,index) => (
+                            <div key={index}>
                                <Text>{e}</Text>
                                <Spacer y={1} />
-                            </>
+                            </div>
                         ))}
                         <Text>{result.resultado.resultado}</Text>
                     </Text>

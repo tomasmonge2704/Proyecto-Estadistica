@@ -3,10 +3,9 @@ import tStudentResultado from "../tStudent";
 import DistribucionNormalResultado from "../distribucionNormal";
 import TchebycheffResultado from "../Tchebycheff";
 export default function Logica({datos}) {
-    if(datos.distribucion == undefined) datos.distribucion = "Normal";
+    if(datos.desvio === 0)datos.desvio = undefined;
     if(datos.media || datos.desvio || datos.N || datos.confianza){
-        if(datos.distribucion == "Normal" && datos.N <= 30 && datos.desvio == 0 || datos.desvio == undefined){
-            datos.valores = JSON.parse(sessionStorage.getItem('datos')).valores;
+        if(datos.distribucion == "Normal" && datos.N <= 30 && datos.desvio == undefined){
             datos.type = "T de Student"
             datos.resultado = tStudentResultado(datos.media, datos.N,datos.valores,datos.confianza)
         }else{
@@ -14,8 +13,10 @@ export default function Logica({datos}) {
                 datos.type = "Teorema de Chebycheff"
                 datos.resultado = TchebycheffResultado(datos.media, datos.N,datos.desvio,datos.confianza)
             }else{
-                datos.type = "Z"
-                datos.resultado = DistribucionNormalResultado(datos.media, datos.N,datos.desvio,datos.confianza)
+                if(datos.desvio && datos.media && datos.N && datos.confianza){
+                    datos.type = "Z"
+                    datos.resultado = DistribucionNormalResultado(datos.media, datos.N,datos.desvio,datos.confianza)
+                }
             }
         }
     }

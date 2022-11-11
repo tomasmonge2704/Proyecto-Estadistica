@@ -11,7 +11,6 @@ import {
   Route,
 } from "react-router-dom";
 function App() {
-  sessionStorage.setItem('datos', JSON.stringify({distribucion:"Normal"}));
   return (
     <NextUIProvider>
       <BrowserRouter>

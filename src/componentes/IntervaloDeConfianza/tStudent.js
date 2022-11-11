@@ -1,9 +1,6 @@
 const { jStat } = require('jstat')
 
 export default function tStudentResultado(media,N,valores,confianza){
-    if(valores == undefined){
-        valores = []
-    }
     let xiCuadrado = 0
     let xFija = 0
     valores.forEach( e => {
@@ -23,7 +20,9 @@ export default function tStudentResultado(media,N,valores,confianza){
         pasos.push(`${xFija} - ${T.toFixed(4)} ${S.toFixed(4)}/√${N}  <= μ <=  ${xFija} + ${T.toFixed(4)} ${S.toFixed(4)}/√${N}`)
     }
     const resultado = {resultado:`${(xFija - T * (S/Math.sqrt(N))).toFixed(4)} <= μ <= ${(xFija + T * (S/Math.sqrt(N))).toFixed(4)}`,pasos:pasos};
+    if(isNaN(S)){
+        resultado.resultado = "Faltan Valores para poder Resolver" 
+    }
     return resultado
 }
-//`${xFija} - t σ/√${N}  <= μ <=  ${xFija} + t σ/√${N}`
-//{"media":"","confianza":"95","desvio":"","N":"9","valores":[{"value":84,"id":1},{"value":88,"id":2},{"value":83,"id":3},{"value":90,"id":4},{"value":87,"id":5},{"value":87,"id":6},{"value":85,"id":7},{"value":88,"id":8},{"value":82,"id":9}]}
+
