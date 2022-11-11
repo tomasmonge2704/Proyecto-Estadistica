@@ -61,7 +61,7 @@ export default function Intervalo_de_confianza({ datos }) {
                     <Spacer y={1} />
                     <Input id='confianza' type="number" label="Nivel de Confianza" />
                     <Spacer y={1} />
-                    {!datos.desvio && datos.confianza && datos.distribucion=="Normal"? (<Button shadow color="success" auto onClick={handler}>
+                    {datos.confianza && datos.N <= 30? (<Button shadow color="success" auto onClick={handler}>
                         Agregar Valores
                     </Button>) : (<></>)}
                 </Card.Body>

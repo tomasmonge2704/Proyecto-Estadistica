@@ -77,7 +77,6 @@ export default function GetDatos() {
         }))
         sessionStorage.setItem('datos', JSON.stringify(datos));
     }
-    console.log(datos.valores)
     return (
         <>
             <NavBar />
