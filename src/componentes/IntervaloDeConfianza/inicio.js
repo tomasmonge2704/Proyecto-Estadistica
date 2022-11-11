@@ -11,7 +11,6 @@ export default function ConfianzaInicio() {
     datos = JSON.parse(sessionStorage.getItem('datos'));
     setValores(datos.valores)
   })
-  sessionStorage.setItem('datos', JSON.stringify({distribucion:"Normal"}));
   return (
     <>
     <NavBar/>

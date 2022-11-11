@@ -58,6 +58,5 @@ export default function GetDatos() {
         }))
         sessionStorage.setItem('datos', JSON.stringify(datos));
     }
-    
     return (<Logica datos={datos}/>)
 }
