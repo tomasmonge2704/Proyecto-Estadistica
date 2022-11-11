@@ -3,6 +3,7 @@ import tStudentResultado from "../tStudent";
 import DistribucionNormalResultado from "../distribucionNormal";
 import TchebycheffResultado from "../Tchebycheff";
 export default function Logica({datos}) {
+    console.log(datos)
     if(datos.desvio === 0)datos.desvio = undefined;
     if(datos.media || datos.desvio || datos.N || datos.confianza){
         if(datos.distribucion == "Normal" && datos.N <= 30 && datos.desvio == undefined){

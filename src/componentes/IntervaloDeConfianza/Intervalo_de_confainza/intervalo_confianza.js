@@ -4,10 +4,9 @@ import React from "react";
 export default function Intervalo_de_confianza({ datos }) {
     const [visible, setVisible] = React.useState(false);
     const [normal, setNormal] = React.useState(true);
-    const [type, setType] = React.useState(false);
     const [visibleInputs, setVisibleInputs] = React.useState(false);
     const handler = () => setVisible(true);
-    const handlerInputs = (title) => { setVisibleInputs(true); setType(title) };
+    const handlerInputs = (title) => { setVisibleInputs(true); datos.tipoDeValores = title };
     const closeHandler = () => {
         setVisible(false);
     };
@@ -30,34 +29,35 @@ export default function Intervalo_de_confianza({ datos }) {
     ];
     return (
         <>
-            <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="cardConfianza">
+            <Card isHoverable variant="bordered" css={{ mw: "500px"}} className="cardConfianza">
                 <Card.Body>
                     <Text h1 size={40}
                         css={{
                             textGradient: "45deg, $yellow600 -20%, $red600 100%",
+                            textAlign:"center"
                         }}
                         weight="bold">Intervalo de Confianza</Text>
                     <Spacer y={1} />
-                    <Grid.Container gap={2}>
-                        <Grid>
+                    <Grid.Container gap={2}  justify="center" alignItems="stretch">
+                        <Grid xs={3} justify="center" >
                             <Switch shadow color="success" checked={normal} id="distribucion" onChange={(e) => setNormal(e.target.checked)} />
                         </Grid>
-                        <Grid>
-                            <Text h3>{normal == true ? "Distribucion Normal" : "Distribucion No Normal"}</Text>
+                        <Grid xs={9}>
+                            <Text h4 css={{textAlign:"center"}}>{normal == true ? "Distribucion Normal" : "Distribucion No Normal"}</Text>
                         </Grid>
                     </Grid.Container>
                     <Grid.Container gap={2}>
                         <Grid xs={6}>
-                        <Input id='desvio' type="number" label="Desvio(√varianza)"/>
+                        {datos.varianza ? (<Input id='desvio' type="number" disabled placeholder={Math.sqrt(datos.varianza)} label="Desvio(√varianza)"/>):(<Input id='desvio' type="number" label="Desvio(√varianza)"/>)}
                         </Grid>
                         <Grid xs={6}>
-                        <Input id='varianza' type="number" label="Varianza"/>
+                        {datos.desvio ? (<Input id='varianza' type="number" disabled placeholder={Math.pow(datos.desvio,2)} label="Varianza"/>) : (<Input id='varianza' type="number"  label="Varianza"/>)}
                         </Grid>
                     </Grid.Container>
                     <Spacer y={1} />
-                    <Input id='media' type="number" label="Media de la muestra"/>
+                    {datos.valores.length !== 0 ? (<Input id='media' type="number" disabled placeholder={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media' type="number" label="Media de la muestra"/>)}
                     <Spacer y={1} />
-                    <Input id='N' type="number" label="Tamaño de muestra"/>
+                    {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled placeholder={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
                     <Input id='confianza' type="number" label="Nivel de Confianza" />
                     <Spacer y={1} />
@@ -82,7 +82,7 @@ export default function Intervalo_de_confianza({ datos }) {
                     </Text>
                 </Modal.Header>
                 <Modal.Body>
-                    {visibleInputs == true ? (<ModalTipoDeDatos tipoDeDato={type} />) : (
+                    {visibleInputs == true ? (<ModalTipoDeDatos datos={datos} />) : (
                         list.map((item, index) => (
                             <Grid xs={12} sm={12} key={index}>
                                 <Card isPressable onClick={() => handlerInputs(item.title)}>

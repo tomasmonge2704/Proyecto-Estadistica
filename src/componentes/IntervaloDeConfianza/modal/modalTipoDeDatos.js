@@ -1,22 +1,17 @@
 import { Input, Spacer, Button, Grid,Text } from "@nextui-org/react";
 import React from "react";
 import TablaDatos from "../tabla/tablaDatos";
-export default function ModalTipoDeDatos({ tipoDeDato }) {
-  const [valores, setValores] = React.useState([]);
+export default function ModalTipoDeDatos({ datos }) {
   function updateValueMedia(e) {
-    const datos = JSON.parse(sessionStorage.getItem('datos'));
-    if (datos.valores == undefined) {
-      datos.valores = []
-    }
     let nuevoDato = 0
-    if(tipoDeDato == "Agrupados en intervalos"){
+    if(datos.tipoDeValores == "Agrupados en intervalos"){
       nuevoDato = { value: (Number(document.getElementById('valor1').value) + Number(document.getElementById('valor2').value)) / 2,frecuencia:Number(document.getElementById('valor3').value)}
     }else{
       nuevoDato = { value: Number(document.getElementById('valor').value),frecuencia:1 }
     }
     nuevoDato.id = datos.valores.length + 1
     datos.valores.push(nuevoDato)
-    setValores(datos.valores)
+    datos.N = datos.valores.length
     sessionStorage.setItem('datos', JSON.stringify(datos))
     window.dispatchEvent(new Event("storage"));
   }
@@ -24,28 +19,22 @@ export default function ModalTipoDeDatos({ tipoDeDato }) {
     <div css={{
       Width: "100%",
     }}>
-      {tipoDeDato !== "Agrupados en intervalos" ? (
-        <Grid.Container gap={2} justify="center" alignItems="flex-end">
-          <Grid xs={6}>
-            <Input label="Agregar Dato" placeholder="Ej: 9" type="number" size="lg" id="valor" />
-          </Grid>
-          <Grid xs={6}>
-            <Button shadow color="success" auto onClick={updateValueMedia}>
+      {datos.tipoDeValores !== "Agrupados en intervalos" ? (
+        <div style={{display:"grid"}}>
+            <Input label="Agregar Dato" placeholder="Ej: 9" fullWidth type="number" size="lg" id="valor"/>
+            <Spacer y={1}/>
+            <Button shadow color="success" fullWidth onClick={updateValueMedia}>
               Agregar Valores
             </Button>
-          </Grid>
-        </Grid.Container>
+        </div>
       ) : (
         <Grid.Container gap={2} justify="center" alignItems="center">
 
-          <Grid xs={5}>
+          <Grid xs={6}>
             <Input label="Valor Minimo" placeholder="Ej: 100" type="number" size="lg" id="valor1" />
           </Grid>
-          <Grid xs={1}>
-          <Text > - </Text>
-          </Grid>
-          <Grid xs={5}>
-            <Input label="Valor Maximo" placeholder="200" type="number" size="lg" id="valor2" />
+          <Grid xs={6}>
+            <Input label="Valor Max" placeholder="Ej: 200" type="number" size="lg" id="valor2" />
           </Grid>
           <Grid xs={12}>
             <Input label="Frecuencia" placeholder="Ej: 3" type="number" fullWidth size="lg" id="valor3"/>
@@ -59,7 +48,7 @@ export default function ModalTipoDeDatos({ tipoDeDato }) {
       )}
 
       <Spacer y={2} />
-      <TablaDatos valores={valores} />
+      <TablaDatos valores={datos.valores} />
     </div>
   );
 }

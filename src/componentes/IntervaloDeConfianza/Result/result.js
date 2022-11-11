@@ -15,6 +15,7 @@ export default function Result({ result }) {
                 <Text h1 size={40}
                     css={{
                         textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                        textAlign:"center"
                     }}
                     weight="bold">Resultados</Text>
                 <Spacer y={1} />
