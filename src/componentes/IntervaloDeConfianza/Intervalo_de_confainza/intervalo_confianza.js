@@ -55,7 +55,7 @@ export default function Intervalo_de_confianza({ datos }) {
                         </Grid>
                     </Grid.Container>
                     <Spacer y={1} />
-                    {datos.valores.length !== 0 ? (<Input id='media' type="number" disabled value={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media' type="number" label="Media de la muestra"/>)}
+                    {datos.valores.length !== 0 ? (<Input id='media' type="number" value={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media' type="number" label="Media de la muestra"/>)}
                     <Spacer y={1} />
                     {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
