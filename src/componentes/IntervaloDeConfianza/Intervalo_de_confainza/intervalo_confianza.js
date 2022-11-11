@@ -48,16 +48,16 @@ export default function Intervalo_de_confianza({ datos }) {
                     </Grid.Container>
                     <Grid.Container gap={2}>
                         <Grid xs={6}>
-                        {datos.varianza ? (<Input id='desvio' type="number" disabled placeholder={Math.sqrt(datos.varianza)} label="Desvio(√varianza)"/>):(<Input id='desvio' type="number" label="Desvio(√varianza)"/>)}
+                        {datos.varianza ? (<Input id='desvio' type="number" value={Math.sqrt(datos.varianza)} label="Desvio(√varianza)"/>):(<Input id='desvio' type="number" label="Desvio(√varianza)"/>)}
                         </Grid>
                         <Grid xs={6}>
-                        {datos.desvio ? (<Input id='varianza' type="number" disabled placeholder={Math.pow(datos.desvio,2)} label="Varianza"/>) : (<Input id='varianza' type="number"  label="Varianza"/>)}
+                        {datos.desvio ? (<Input id='varianza' type="number" value={Math.pow(datos.desvio,2)} label="Varianza"/>) : (<Input id='varianza' type="number"  label="Varianza"/>)}
                         </Grid>
                     </Grid.Container>
                     <Spacer y={1} />
-                    {datos.valores.length !== 0 ? (<Input id='media' type="number" disabled placeholder={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media' type="number" label="Media de la muestra"/>)}
+                    {datos.valores.length !== 0 ? (<Input id='media' type="number" disabled value={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media' type="number" label="Media de la muestra"/>)}
                     <Spacer y={1} />
-                    {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled placeholder={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
+                    {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
                     <Input id='confianza' type="number" label="Nivel de Confianza" />
                     <Spacer y={1} />
