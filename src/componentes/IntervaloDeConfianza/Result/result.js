@@ -18,7 +18,7 @@ export default function Result({ result }) {
                     }}
                     weight="bold">Resultados</Text>
                 <Spacer y={1} />
-                {Object.keys(result).length !== 0 ? (
+                {result.media || result.desvio || result.N || result.confianza ? (
                     <><Text blockquote css={{ textAlign: "center" }}>Se resuelve con {result.type}<hr />
                         <Spacer y={1} />
                         {result.resultado.pasos.map(e => (

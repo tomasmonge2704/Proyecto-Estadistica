@@ -1,8 +1,9 @@
-import { Spacer, Card, Text, Input, Button, Modal, Row, Grid } from "@nextui-org/react";
+import { Spacer, Card, Text, Input, Button, Modal, Row, Grid, Switch } from "@nextui-org/react";
 import ModalTipoDeDatos from "../modal/modalTipoDeDatos";
 import React from "react";
-export default function Intervalo_de_confianza({datos}) {
+export default function Intervalo_de_confianza({ datos }) {
     const [visible, setVisible] = React.useState(false);
+    const [normal, setNormal] = React.useState(true);
     const [type, setType] = React.useState(false);
     const [visibleInputs, setVisibleInputs] = React.useState(false);
     const handler = () => setVisible(true);
@@ -30,6 +31,14 @@ export default function Intervalo_de_confianza({datos}) {
                         }}
                         weight="bold">Intervalo de Confianza</Text>
                     <Spacer y={1} />
+                    <Grid.Container gap={2}>
+                        <Grid>
+                            <Switch shadow color="success" checked={normal} id="distribucion" onChange={(e) =>setNormal(e.target.checked)} />
+                        </Grid>
+                        <Grid>
+                            <Text h3>{normal == true ? "Distribucion Normal" : "Distribucion No Normal"}</Text>
+                        </Grid>
+                    </Grid.Container>
                     <Input id='media' type="number" label="Media de la muestra" />
                     <Spacer y={1} />
                     <Input id='desvio' type="number" label="Desvio" />
