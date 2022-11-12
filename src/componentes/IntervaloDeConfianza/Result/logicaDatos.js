@@ -1,7 +1,7 @@
 import Result from "./result"
-import tStudentResultado from "../tStudent";
+import tStudentResultado from "../formulas/tStudent";
 import DistribucionNormalResultado from "../distribucionNormal";
-import TchebycheffResultado from "../Tchebycheff";
+import TchebycheffResultado from "../formulas/Tchebycheff";
 export default function Logica({datos}) {
     if(datos.desvio === 0)datos.desvio = undefined;
     if(datos.varianza !== undefined)datos.desvio = Math.sqrt(datos.varianza);
