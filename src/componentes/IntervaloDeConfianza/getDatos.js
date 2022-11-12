@@ -4,6 +4,7 @@ import NavBar from '../Navbar/Nabvar';
 import { Spacer } from '@nextui-org/react';
 import TablaDatos from "./tabla/tablaDatos";
 import Logica from "./Result/logicaDatos";
+import GraficoArea from "./grafico";
 export default function GetDatos() {
     const [datos, setDatos] = useState({distribucion:"Normal",valores:[]});
     useEffect(() => {
@@ -77,6 +78,7 @@ export default function GetDatos() {
         }))
         sessionStorage.setItem('datos', JSON.stringify(datos));
     }
+
     return (
         <>
             <NavBar />
@@ -85,6 +87,7 @@ export default function GetDatos() {
                 <Spacer y={2} />
                 <Logica datos={datos}/>
             </div>
+            <GraficoArea/>
             {datos.valores.length !== 0 ? (<div className='contenedorTabla'>
                 <TablaDatos valores={datos.valores} />
                 <Spacer y={4} />

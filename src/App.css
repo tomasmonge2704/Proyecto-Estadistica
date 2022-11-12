@@ -5,8 +5,10 @@
 		font-size: 16px;
 	}
 }
-.resultadoFinal{
-  
+#chart_div{
+  width: 1200px;
+  height: 600px;
+  margin: 5px;
 }
 .contenedorInicio {
 display: flex;

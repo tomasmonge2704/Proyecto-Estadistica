@@ -19,8 +19,7 @@ export default function TchebycheffResultado(media,N,desvio,confianza,valores){
     if(isNaN(K) || valores.length == 0 || desvio == undefined){
         resultado.resultado = "Faltan Valores para poder Resolver" 
     }else{
-        pasos.push(`${xFija} - ${K.toFixed(4)} ${desvio}/√${N}  <= μ <=  ${xFija} + ${K.toFixed(4)} ${desvio}/√${N}`)
-
+        pasos.push(`${xFija.toFixed(4)} - ${K.toFixed(4)} ${desvio.toFixed(4)}/√${N}  <= μ <=  ${xFija.toFixed(4)} + ${K.toFixed(4)} ${desvio}/√${N.toFixed(4)}`)
     }
     return resultado
 }
