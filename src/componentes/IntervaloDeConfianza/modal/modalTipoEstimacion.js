@@ -1,12 +1,14 @@
-import { Card, Grid,Modal,Text,Row } from "@nextui-org/react";
+import { Card, Grid,Modal,Text,Row, useTheme} from "@nextui-org/react";
 import img1 from "../../../img/image004.png"
 import img2 from "../../../img/proporcion.png"
+import img3 from "../../../img/varianza.png"
 import React from "react";
-import GetDatosMedia from "../getDatos/media";
-import GetDatosProporcion from "../getDatos/proporcion";
-import GetDatosVarianza from "../getDatos/varianza";
-import GetDatosDiferencia from "../getDatos/diferencia";
+import GetDatosMedia from "../estimarMedia/GetDatos";
+import GetDatosProporcion from "../estimarProporcion/GetDatos";
+import GetDatosVarianza from "../estimarVarianza/GetDatos";
+import GetDatosDiferencia from "../estimarDiferencia/GetDatos";
 import isMobile from "is-mobile";
+import { useTheme as useNextTheme } from 'next-themes'
 export default function ModalTipoDeEstimacion() {
     const list = [
         {
@@ -19,7 +21,7 @@ export default function ModalTipoDeEstimacion() {
         },
         {
             title: "Estimacion de la Varianza",
-            img: "https://img.freepik.com/vector-gratis/diseno-estilo-grunge-rojo-proximamente_1017-26691.jpg?w=2000"
+            img: img3
         }
         ,
         {
@@ -27,6 +29,7 @@ export default function ModalTipoDeEstimacion() {
             img: "https://img.freepik.com/vector-gratis/diseno-estilo-grunge-rojo-proximamente_1017-26691.jpg?w=2000"
         }
     ];
+    const { isDark, type } = useTheme();
     const [visible, setVisible] = React.useState(true);
     const [estimacion, setEstimacion] = React.useState("Estimacion de la Media Poblacional");
     const handlerEstimacion = (title) => {
@@ -69,6 +72,7 @@ export default function ModalTipoDeEstimacion() {
                                             width="100%"
                                             height={140}
                                             alt={item.title}
+                                            css={{filter:"invert(3)"}}
                                         />
                                     </Card.Body>
                                     <Card.Footer css={{ justifyItems: "center" }}>

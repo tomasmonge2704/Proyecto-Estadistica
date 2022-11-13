@@ -1,12 +1,17 @@
-import { Navbar, Link, Text, Avatar, Dropdown,Spacer } from "@nextui-org/react";
+import { Navbar, Link, Text,Spacer } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo.js";
+import { useTheme as useNextTheme } from 'next-themes'
+import { Switch, useTheme } from '@nextui-org/react'
+import { SunIcon } from './SunIcon';
+import { MoonIcon } from './MoonIcon';
 export default function NavBar ({page}) {
-  console.log(page)
     const collapseItems = [
         {nombre:"Prueba de Hipotesis",href:"/hipotesis"},
         {nombre:"Intervalos de Confianza",href:"/confianza"},
         {nombre:"Probabilidad",href:"/probabilidad"},
       ];
+      const { setTheme } = useNextTheme();
+      const { isDark, type } = useTheme();
     return(
         <Navbar isBordered variant="static">
         <Navbar.Toggle showIn="xs" />
@@ -40,58 +45,23 @@ export default function NavBar ({page}) {
             },
           }}
         >
-          <Dropdown placement="bottom-right">
             <Navbar.Item>
-              <Dropdown.Trigger>
-                <Avatar
-                  bordered
-                  as="button"
-                  color="secondary"
-                  size="md"
-                  src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-                />
-              </Dropdown.Trigger>
+            <Switch
+        checked={isDark}
+        iconOff={<SunIcon filled />}
+        iconOn={<MoonIcon filled />}
+        size="xl"
+        color="error"
+        onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+      />
             </Navbar.Item>
-            <Dropdown.Menu
-              aria-label="User menu actions"
-              color="secondary"
-              onAction={(actionKey) => console.log({ actionKey })}
-            >
-              <Dropdown.Item key="profile" css={{ height: "$18" }}>
-                <Text b color="inherit" css={{ d: "flex" }}>
-                  Signed in as
-                </Text>
-                <Text b color="inherit" css={{ d: "flex" }}>
-                  zoey@example.com
-                </Text>
-              </Dropdown.Item>
-              <Dropdown.Item key="settings" withDivider>
-                My Settings
-              </Dropdown.Item>
-              <Dropdown.Item key="team_settings">Team Settings</Dropdown.Item>
-              <Dropdown.Item key="analytics" withDivider>
-                Analytics
-              </Dropdown.Item>
-              <Dropdown.Item key="system">System</Dropdown.Item>
-              <Dropdown.Item key="configurations">Configurations</Dropdown.Item>
-              <Dropdown.Item key="help_and_feedback" withDivider>
-                Help & Feedback
-              </Dropdown.Item>
-              <Dropdown.Item key="logout" withDivider color="error">
-                Log Out
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
         </Navbar.Content>
         <Navbar.Collapse>
           {collapseItems.map((item, index) => (
             <Navbar.CollapseItem
               key={item.nombre}
               activeColor="secondary"
-              css={{
-                color: index === collapseItems.length - 1 ? "$error" : "",
-              }}
-              isActive={index === 2}
+              isActive={page == item.href ? true : false }
             >
               <Link
                 color="inherit"
