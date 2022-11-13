@@ -36,7 +36,7 @@ export default function Intervalo_de_confianza({ datos }) {
                             textGradient: "45deg, $yellow600 -20%, $red600 100%",
                             textAlign:"center"
                         }}
-                        weight="bold">Intervalo de Confianza</Text>
+                        weight="bold">Datos de la Muestra</Text>
                     <Spacer y={1} />
                     <Grid.Container gap={2}  justify="center" alignItems="stretch">
                         <Grid xs={3} justify="center" >

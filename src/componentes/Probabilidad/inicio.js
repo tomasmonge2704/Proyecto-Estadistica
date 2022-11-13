@@ -1,6 +1,6 @@
 import NavBar from "../Navbar/Nabvar"
-export default function InicioProbabilidad (){
+export default function InicioProbabilidad ({page}){
     return (
-        <NavBar/>
+        <NavBar page={page}/>
     )
 }

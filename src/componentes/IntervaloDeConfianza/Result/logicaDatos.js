@@ -1,6 +1,6 @@
 import Result from "./result"
 import tStudentResultado from "../formulas/tStudent";
-import DistribucionNormalResultado from "../distribucionNormal";
+import DistribucionNormalResultado from "../formulas/distribucionNormal";
 import TchebycheffResultado from "../formulas/Tchebycheff";
 export default function Logica({datos}) {
     if(datos.desvio === 0)datos.desvio = undefined;

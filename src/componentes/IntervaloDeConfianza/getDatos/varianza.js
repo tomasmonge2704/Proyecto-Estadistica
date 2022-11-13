@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Intervalo_de_confianza from '../tipoDeEstimacion/varianza';
-import NavBar from '../../Navbar/Nabvar';
 import { Spacer } from '@nextui-org/react';
 import TablaDatos from "../tabla/tablaDatos";
 import Logica from "../Result/logicaDatos";
@@ -81,7 +80,6 @@ export default function GetDatosVarianza() {
 
     return (
         <>
-            <NavBar />
             <div className="contenedorInicio">
                 <Intervalo_de_confianza datos={datos} />
                 <Spacer y={2} />

@@ -1,10 +1,11 @@
 import { Navbar, Link, Text, Avatar, Dropdown,Spacer } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo.js";
-export default function NavBar () {
+export default function NavBar ({page}) {
+  console.log(page)
     const collapseItems = [
-        {nombre:"Prueba de Hipotesis",href:"/Hipotesis"},
-        {nombre:"Intervalos de Confianza",href:"/Confianza"},
-        {nombre:"Probabilidad",href:"/Probabilidad"},
+        {nombre:"Prueba de Hipotesis",href:"/hipotesis"},
+        {nombre:"Intervalos de Confianza",href:"/confianza"},
+        {nombre:"Probabilidad",href:"/probabilidad"},
       ];
     return(
         <Navbar isBordered variant="static">
@@ -28,7 +29,7 @@ export default function NavBar () {
           variant="highlight-rounded"
         >
        {collapseItems.map((item, index) => (
-            <Navbar.Link href={item.href} key={index}>{item.nombre}</Navbar.Link>
+            <Navbar.Link href={item.href} key={index} isActive={page == item.href ? true : false }>{item.nombre}</Navbar.Link>
           ))}
         </Navbar.Content>
         <Navbar.Content

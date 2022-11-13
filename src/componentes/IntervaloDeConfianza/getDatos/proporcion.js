@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import Intervalo_de_confianza from '../tipoDeEstimacion/proporcion';
-import NavBar from '../../Navbar/Nabvar';
 import { Spacer } from '@nextui-org/react';
-import TablaDatos from "../tabla/tablaDatos";
-import Logica from "../Result/logicaDatos";
+import LogicaProporcion from "../Result/logicaPoblacional";
 import GraficoArea from "../grafico";
 export default function GetDatosProporcion() {
     const [datos, setDatos] = useState({distribucion:"Normal",valores:[]});
     useEffect(() => {
-        document.getElementById('R').addEventListener('change', updateValueMedia)
+        document.getElementById('R').addEventListener('change', updateValueR)
         document.getElementById('N').addEventListener('change', updateValueN)
         document.getElementById('confianza').addEventListener('change', updateValueConfianza)
         document.getElementById('distribucion').addEventListener('change', updateValueDistribucion)
@@ -31,11 +29,11 @@ export default function GetDatosProporcion() {
         }))
         sessionStorage.setItem('datos', JSON.stringify(datos));
     }
-    function updateValueMedia(e) {
-        datos.media = Number(e.target.value)
+    function updateValueR(e) {
+        datos.R = Number(e.target.value)
         setDatos(prevState => ({
             ...prevState,
-            media: datos.media
+            R: datos.R
 
         }))
         sessionStorage.setItem('datos', JSON.stringify(datos));
@@ -61,16 +59,11 @@ export default function GetDatosProporcion() {
 
     return (
         <>
-            <NavBar />
             <div className="contenedorInicio">
                 <Intervalo_de_confianza datos={datos} />
                 <Spacer y={2} />
-                <Logica datos={datos}/>
+                <LogicaProporcion datos={datos}/>
             </div>
             <GraficoArea/>
-            {datos.valores.length !== 0 ? (<div className='contenedorTabla'>
-                <TablaDatos valores={datos.valores} />
-                <Spacer y={4} />
-            </div>) : (<></>)}
         </>)
 }

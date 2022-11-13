@@ -16,9 +16,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Inicio/>} />
-          <Route exact path="/confianza" element={<ConfianzaInicio/>} />
-          <Route exact path="/probabilidad" element={<InicioProbabilidad/>} />
-          <Route exact path="/hipotesis" element={<InicioHipotesis/>} />
+          <Route exact path="/confianza" element={<ConfianzaInicio page="/confianza"/>} />
+          <Route exact path="/probabilidad" element={<InicioProbabilidad page="/probabilidad"/>} />
+          <Route exact path="/hipotesis" element={<InicioHipotesis page="/hipotesis"/>} />
         </Routes>
       </BrowserRouter>
     </NextUIProvider>
