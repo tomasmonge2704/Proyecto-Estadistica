@@ -25,7 +25,7 @@ export default function ModalTipoDeEstimacion() {
         }
         ,
         {
-            title: "Estimacion de la Diferencia de Proporciones",
+            title: "Estimacion de la Diferencia de Medias",
             img: "https://img.freepik.com/vector-gratis/diseno-estilo-grunge-rojo-proximamente_1017-26691.jpg?w=2000"
         }
     ];
@@ -44,7 +44,7 @@ export default function ModalTipoDeEstimacion() {
         {estimacion == "Estimacion de la Media Poblacional" ? (<GetDatosMedia/>) : (<></>)}
         {estimacion == "Estimacion de la Proporcion Poblacional" ? (<GetDatosProporcion/>) : (<></>)}
         {estimacion == "Estimacion de la Varianza" ? (<GetDatosVarianza/>) : (<></>)}
-        {estimacion == "Estimacion de la Diferencia de Proporciones" ? (<GetDatosDiferencia/>) : (<></>)}
+        {estimacion == "Estimacion de la Diferencia de Medias" ? (<GetDatosDiferencia/>) : (<></>)}
         <Modal
             blur
             preventClose
@@ -72,7 +72,7 @@ export default function ModalTipoDeEstimacion() {
                                             width="100%"
                                             height={140}
                                             alt={item.title}
-                                            css={{filter:"invert(3)"}}
+                                            css={isDark == true ? {filter:"invert(3)"} : {filter:"none"}}
                                         />
                                     </Card.Body>
                                     <Card.Footer css={{ justifyItems: "center" }}>
