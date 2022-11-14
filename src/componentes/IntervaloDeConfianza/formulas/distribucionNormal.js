@@ -1,4 +1,4 @@
-const { jStat } = require('jstat')
+import { jStat as jStat } from 'jstat'
 
 export default function DistribucionNormalResultado(media,N,desvio,confianza){
     const S = desvio

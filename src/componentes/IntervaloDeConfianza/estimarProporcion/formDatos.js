@@ -17,7 +17,7 @@ export default function Intervalo_de_confianza({ datos }) {
                     <Spacer y={1} />
                     <Input id='N' type="number" label="Tamaño de la Poblacion"/>
                     <Spacer y={1} />
-                    <Input id='confianza' type="number" label="Nivel de Confianza" />
+                    <Input id='confianza' placeholder="Ej: 95" type="number" label="Nivel de Confianza" />
                     <Spacer y={1} />
                 </Card.Body>
             </Card>

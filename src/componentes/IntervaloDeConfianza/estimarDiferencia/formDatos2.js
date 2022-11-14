@@ -51,7 +51,7 @@ export default function Intervalo_de_confianza2({ datos }) {
                     <Spacer y={1} />
                     {datos.valores.length !== 0 ? (<Input id='N2' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N2' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
-                    {datos.confianza ? (<Input id='confianza2' type="number" disabled value={datos.confianza} label="Nivel de Confianza" />):(<Input id='confianza2' type="number" label="Nivel de Confianza" />)}
+                    {datos.confianza ? (<Input id='confianza2' type="number" disabled value={datos.confianza} label="Nivel de Confianza" />):(<Input id='confianza2' type="number" placeholder="Ej: 95" label="Nivel de Confianza" />)}
                 </Card.Body>
             </Card>
             <Modal

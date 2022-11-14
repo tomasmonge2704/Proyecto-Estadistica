@@ -59,7 +59,7 @@ export default function Intervalo_de_confianza({ datos }) {
                     <Spacer y={1} />
                     {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
-                    <Input id='confianza' type="number" label="Nivel de Confianza" />
+                    <Input id='confianza' placeholder="Ej: 95" type="number" label="Nivel de Confianza" />
                     <Spacer y={1} />
                     {datos.confianza && datos.N <= 30? (<Button shadow color="success" auto onClick={handler}>
                         Agregar Valores

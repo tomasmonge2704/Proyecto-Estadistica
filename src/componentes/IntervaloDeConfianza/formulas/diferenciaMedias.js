@@ -1,4 +1,4 @@
-import { obtenerXiFija,obtenerDesvioTipicoAmalgamado } from "./utils";
+import { obtenerDesvioTipicoAmalgamado } from "./utils";
 import { jStat as jStat } from 'jstat'
 
 export default function diferenciaMedias(datos){

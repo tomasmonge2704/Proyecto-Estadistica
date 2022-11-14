@@ -3,11 +3,13 @@ import img1 from "../../../img/image004.png"
 import img2 from "../../../img/proporcion.png"
 import img3 from "../../../img/varianza.png"
 import img4 from "../../../img/diferenciaMedias.png"
+import img5 from "../../../img/diferenciaProporciones.png"
 import React from "react";
 import GetDatosMedia from "../estimarMedia/GetDatos";
 import GetDatosProporcion from "../estimarProporcion/GetDatos";
 import GetDatosVarianza from "../estimarVarianza/GetDatos";
 import GetDatosDiferencia from "../estimarDiferencia/GetDatos";
+import GetDatosDiferenciaProporciones from "../estimarDiferenciaProporciones/GetDatos";
 import isMobile from "is-mobile";
 import { useTheme as useNextTheme } from 'next-themes'
 export default function ModalTipoDeEstimacion() {
@@ -29,6 +31,11 @@ export default function ModalTipoDeEstimacion() {
             title: "Estimacion de la Diferencia de Medias",
             img: img4
         }
+        ,
+        {
+            title: "Estimacion de la Diferencia de Proporciones",
+            img: img5
+        }
     ];
     const { isDark, type } = useTheme();
     const [visible, setVisible] = React.useState(true);
@@ -46,6 +53,8 @@ export default function ModalTipoDeEstimacion() {
         {estimacion == "Estimacion de la Proporcion Poblacional" ? (<GetDatosProporcion/>) : (<></>)}
         {estimacion == "Estimacion de la Varianza" ? (<GetDatosVarianza/>) : (<></>)}
         {estimacion == "Estimacion de la Diferencia de Medias" ? (<GetDatosDiferencia/>) : (<></>)}
+        {estimacion == "Estimacion de la Diferencia de Proporciones" ? (<GetDatosDiferenciaProporciones/>) : (<></>)}
+
         <Modal
             blur
             preventClose
