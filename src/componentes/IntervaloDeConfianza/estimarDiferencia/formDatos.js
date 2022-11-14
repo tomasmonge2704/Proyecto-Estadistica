@@ -36,16 +36,8 @@ export default function Intervalo_de_confianza({ datos }) {
                             textGradient: "45deg, $yellow600 -20%, $red600 100%",
                             textAlign:"center"
                         }}
-                        weight="bold">Intervalo de Confianza</Text>
+                        weight="bold">Datos de la Muestra 1</Text>
                     <Spacer y={1} />
-                    <Grid.Container gap={2}  justify="center" alignItems="stretch">
-                        <Grid xs={3} justify="center" >
-                            <Switch shadow color="success" checked={normal} id="distribucion" onChange={(e) => setNormal(e.target.checked)} />
-                        </Grid>
-                        <Grid xs={9}>
-                            <Text h4 css={{textAlign:"center"}}>{normal == true ? "Distribucion Normal" : "Distribucion No Normal"}</Text>
-                        </Grid>
-                    </Grid.Container>
                     <Grid.Container gap={2}>
                         <Grid xs={6}>
                         {datos.varianza ? (<Input id='desvio' type="number" value={Math.sqrt(datos.varianza)} label="Desvio(√varianza)"/>):(<Input id='desvio' type="number" label="Desvio(√varianza)"/>)}
@@ -60,10 +52,6 @@ export default function Intervalo_de_confianza({ datos }) {
                     {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
                     <Input id='confianza' type="number" label="Nivel de Confianza" />
-                    <Spacer y={1} />
-                    {datos.confianza && datos.N <= 30? (<Button shadow color="success" auto onClick={handler}>
-                        Agregar Valores
-                    </Button>) : (<></>)}
                 </Card.Body>
             </Card>
             <Modal

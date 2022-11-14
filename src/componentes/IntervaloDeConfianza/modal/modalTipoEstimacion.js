@@ -2,6 +2,7 @@ import { Card, Grid,Modal,Text,Row, useTheme} from "@nextui-org/react";
 import img1 from "../../../img/image004.png"
 import img2 from "../../../img/proporcion.png"
 import img3 from "../../../img/varianza.png"
+import img4 from "../../../img/diferenciaMedias.png"
 import React from "react";
 import GetDatosMedia from "../estimarMedia/GetDatos";
 import GetDatosProporcion from "../estimarProporcion/GetDatos";
@@ -26,7 +27,7 @@ export default function ModalTipoDeEstimacion() {
         ,
         {
             title: "Estimacion de la Diferencia de Medias",
-            img: "https://img.freepik.com/vector-gratis/diseno-estilo-grunge-rojo-proximamente_1017-26691.jpg?w=2000"
+            img: img4
         }
     ];
     const { isDark, type } = useTheme();
@@ -64,7 +65,7 @@ export default function ModalTipoDeEstimacion() {
             <Grid.Container gap={2}>
             {list.map((item, index) => (
                             <Grid sm={isMobile() ? 12 : 6 } xs={12}key={index}>
-                                <Card isPressable onClick={() => handlerEstimacion(item.title)}>
+                                <Card isPressable isHoverable variant="bordered" onClick={() => handlerEstimacion(item.title)}>
                                     <Card.Body css={{ p: 0 }}>
                                         <Card.Image
                                             src={item.img}
