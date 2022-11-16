@@ -34,7 +34,7 @@ function App() {
       <NextUIProvider>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<Inicio />} />
+            <Route exact path="/" element={<Inicio page="/"/>} />
             <Route exact path="/confianza" element={<ConfianzaInicio page="/confianza" />} />
             <Route exact path="/probabilidad" element={<InicioProbabilidad page="/probabilidad" />} />
             <Route exact path="/hipotesis" element={<InicioHipotesis page="/hipotesis" />} />

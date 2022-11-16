@@ -4,12 +4,14 @@ import img2 from "../../../img/proporcion.png"
 import img3 from "../../../img/varianza.png"
 import img4 from "../../../img/diferenciaMedias.png"
 import img5 from "../../../img/diferenciaProporciones.png"
+import img6 from "../../../img/estimarN.png"
 import React from "react";
 import GetDatosMedia from "../estimarMedia/GetDatos";
 import GetDatosProporcion from "../estimarProporcion/GetDatos";
 import GetDatosVarianza from "../estimarVarianza/GetDatos";
 import GetDatosDiferencia from "../estimarDiferencia/GetDatos";
 import GetDatosDiferenciaProporciones from "../estimarDiferenciaProporciones/GetDatos";
+import GetDatosEstimarN from "../estimarN/GetDatos";
 import isMobile from "is-mobile";
 import { useTheme as useNextTheme } from 'next-themes'
 export default function ModalTipoDeEstimacion() {
@@ -17,6 +19,10 @@ export default function ModalTipoDeEstimacion() {
         {
             title: "Estimacion de la Media Poblacional",
             img: img1
+        },
+        {
+            title: "Estimacion del tamaño de Muestra",
+            img: img6
         },
         {
             title: "Estimacion de la Proporcion Poblacional",
@@ -50,6 +56,7 @@ export default function ModalTipoDeEstimacion() {
     return (
         <>
         {estimacion == "Estimacion de la Media Poblacional" ? (<GetDatosMedia/>) : (<></>)}
+        {estimacion == "Estimacion del tamaño de Muestra" ? (<GetDatosEstimarN/>) : (<></>)}
         {estimacion == "Estimacion de la Proporcion Poblacional" ? (<GetDatosProporcion/>) : (<></>)}
         {estimacion == "Estimacion de la Varianza" ? (<GetDatosVarianza/>) : (<></>)}
         {estimacion == "Estimacion de la Diferencia de Medias" ? (<GetDatosDiferencia/>) : (<></>)}

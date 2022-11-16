@@ -10,6 +10,7 @@ export default function GetDatosMedia() {
         document.getElementById('media').addEventListener('change', updateValueMedia)
         document.getElementById('desvio').addEventListener('change', updateValueDesvio)
         document.getElementById('N').addEventListener('change', updateValueN)
+        document.getElementById('n').addEventListener('change', updateValuen)
         document.getElementById('confianza').addEventListener('change', updateValueConfianza)
         document.getElementById('distribucion').addEventListener('change', updateValueDistribucion)
         document.getElementById('varianza').addEventListener('change', updateValueVarianza)
@@ -64,6 +65,15 @@ export default function GetDatosMedia() {
         setDatos(prevState => ({
             ...prevState,
             N: datos.N
+
+        }))
+        sessionStorage.setItem('datos', JSON.stringify(datos));
+    }
+    function updateValuen(e) {
+        datos.n = Number(e.target.value)
+        setDatos(prevState => ({
+            ...prevState,
+            n: datos.n
 
         }))
         sessionStorage.setItem('datos', JSON.stringify(datos));

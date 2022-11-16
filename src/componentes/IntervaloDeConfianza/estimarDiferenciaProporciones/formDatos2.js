@@ -40,10 +40,10 @@ export default function Intervalo_de_confianza2({ datos }) {
                     <Spacer y={1} />
                     <Grid.Container gap={2}>
                         <Grid xs={6}>
-                        {datos.R ? (<Input id='R2' type="number" value={datos.R2} label="Elementos con atributo" />):(<Input id='R2' type="number"  label="Elementos con atributo" />)}
+                        {datos.R2 ? (<Input id='R2' type="number" value={datos.R2} label="Elementos con atributo" />):(<Input id='R2' placeholder="Ej: 200" type="number"  label="Elementos con atributo" />)}
                         </Grid>
                         <Grid xs={6}>
-                        {datos.R2 && datos.N2 ? (<Input id='proporcion2' value={datos.R2/datos.N2} type="number" label="Proporcion de elementos" />) :(<Input id='proporcion2' type="number" placeholder="Ej: 0.75" label="Proporcion de elementos"/>)}
+                        {datos.R2 && datos.N2 ? (<Input id='proporcion2' value={datos.R2/datos.N2} type="number" label="Proporcion de elementos" />) :(<Input id='proporcion2' type="number" placeholder="Ej: 0.75" label="Proporcion de elementos %"/>)}
                         </Grid>
                     </Grid.Container>
                     <Spacer y={1} />

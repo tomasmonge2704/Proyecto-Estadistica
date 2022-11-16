@@ -6,6 +6,7 @@ import { SunIcon } from './SunIcon';
 import { MoonIcon } from './MoonIcon';
 export default function NavBar ({page}) {
     const collapseItems = [
+        {nombre:"Home",href:"/"},
         {nombre:"Prueba de Hipotesis",href:"/hipotesis"},
         {nombre:"Intervalos de Confianza",href:"/confianza"},
         {nombre:"Probabilidad",href:"/probabilidad"},
