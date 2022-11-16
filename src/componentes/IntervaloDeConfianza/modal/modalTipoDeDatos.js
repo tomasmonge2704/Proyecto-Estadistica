@@ -1,6 +1,6 @@
 import { Input, Spacer, Button, Grid,Text } from "@nextui-org/react";
 import React from "react";
-import TablaDatos from "../tabla/tablaDatos";
+import TablaDatos from "../../tabla/tablaDatos";
 export default function ModalTipoDeDatos({ datos }) {
   function updateValueMedia(e) {
     let nuevoDato = 0

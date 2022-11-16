@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Intervalo_de_confianza from './formDatos';
 import Intervalo_de_confianza2 from "./formDatos2";
 import { Spacer } from '@nextui-org/react';
-import TablaDatos from "../tabla/tablaDatos";
+import TablaDatos from "../../tabla/tablaDatos";
 import Logica from "./logica";
 import GraficoArea from "../grafico";
 export default function GetDatosDiferencia() {

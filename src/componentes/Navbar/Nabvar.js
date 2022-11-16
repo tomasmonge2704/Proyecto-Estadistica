@@ -7,9 +7,11 @@ import { MoonIcon } from './MoonIcon';
 export default function NavBar ({page}) {
     const collapseItems = [
         {nombre:"Home",href:"/"},
-        {nombre:"Prueba de Hipotesis",href:"/hipotesis"},
-        {nombre:"Intervalos de Confianza",href:"/confianza"},
         {nombre:"Probabilidad",href:"/probabilidad"},
+        {nombre:"Intervalos de Confianza",href:"/confianza"},
+        {nombre:"Prueba de Hipotesis",href:"/hipotesis"},
+        {nombre:"Correlacion y Regresion",href:"/correlacion"},
+
       ];
       const { setTheme } = useNextTheme();
       const { isDark, type } = useTheme();
