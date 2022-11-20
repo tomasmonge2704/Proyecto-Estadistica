@@ -19,12 +19,21 @@ export default function Result({ result }) {
                     }}
                     weight="bold">Resultados</Text>
                 <Spacer y={1} />
-                {result.resultado ? (
+                {result.beta1 ? (
                     <><Text blockquote css={{ textAlign: "center" }}>
                         <Spacer y={1} />
-                            <Text>ρ = {result.resultado.Rho}</Text>
+                            <Text>Coeficiente de correlación múltiple (ρ) = {result.Rho.toFixed(5)}</Text>
                         <Spacer y={1} />
-                            <Text>beta1 = {result.resultado.beta1}</Text>
+                            <Text>Coeficiente de Determinación (ρ²) = {result.RhoCuadrado}</Text>
+                        <Spacer y={1} />
+                            <Text>Error típico = {result.ErrorTipico}</Text>
+                        <Spacer y={1} />
+                            <Text>𝛽¹ = {result.beta1}</Text>
+                        <Spacer y={1} />
+                            <Text>𝛽⁰ = {result.beta0}</Text>
+                        <Spacer y={1} />
+                            <Text>Observaciones = {result.N}</Text>
+                        
                     </Text>
                         <Button shadow color="gradient" auto onClick={handler}>
                             Ver formulas
