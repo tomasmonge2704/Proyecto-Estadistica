@@ -26,6 +26,8 @@ export default function Result({ result }) {
                         <Spacer y={1} />
                             <Text>Coeficiente de Determinación (ρ²) = {result.RhoCuadrado}</Text>
                         <Spacer y={1} />
+                            <Text>R² ajustado = {result.RhoCuadradoAjustado}</Text>
+                        <Spacer y={1} />
                             <Text>Error típico = {result.ErrorTipico}</Text>
                         <Spacer y={1} />
                             <Text>𝛽¹ = {result.beta1}</Text>
@@ -35,6 +37,7 @@ export default function Result({ result }) {
                             <Text>Observaciones = {result.N}</Text>
                         
                     </Text>
+                        <Spacer y={1} />
                         <Button shadow color="gradient" auto onClick={handler}>
                             Ver formulas
                         </Button></>

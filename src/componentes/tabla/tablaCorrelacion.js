@@ -7,11 +7,12 @@ export default function TablaDatosCorrelacion({valores}) {
   return (
     <Table
     isHoverable variant="bordered"
-      aria-label="Example table with static content"
+      aria-label="Example pagination  table"
       css={{
         height: "auto",
         Width: "100%",
       }}
+      
     >
       <Table.Header>
         <Table.Column></Table.Column>
@@ -21,7 +22,7 @@ export default function TablaDatosCorrelacion({valores}) {
       </Table.Header>
       <Table.Body>
         {valores.length !== 0 ? (valores.map((item, index) => (
-            <Table.Row key={index}>
+            <Table.Row key={`${index + 1}`}>
               <Table.Cell>{index + 1}</Table.Cell>
               <Table.Cell>{item.valorX}</Table.Cell>
               <Table.Cell>{item.valorY}</Table.Cell>

@@ -21,8 +21,16 @@ export function obtenerVarianza(datos){
     return (y2 - datos.beta0 * y - datos.beta1 * XeY) / 4
 }
 export function obtenerErrorTipico(datos){
-    console.log(obtenerDesvioX(datos))
-    return obtenerDesvioX(datos) / Math.sqrt(datos.N)
+    let sumatoriaY = 0
+    const yFija = obtenerYfija(datos)
+    datos.valores.forEach(function(e){
+        sumatoriaY = sumatoriaY + Math.pow((e.valorY - yFija),2)
+    })
+    return Math.sqrt((1/(datos.N - 2)) * (sumatoriaY - (Math.pow(sumarElementosXeY(datos),2)/denominadorBeta1(datos))))
+}
+export function r2Ajustado(datos){
+    const K = 1;
+    return 1 - ((datos.N - 1) / (datos.N - K - 1)) * (1 - Math.pow(datos.Rho,2))
 }
 export function obtenerXfija(datos){
     let xFija = 0;
