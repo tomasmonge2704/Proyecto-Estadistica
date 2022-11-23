@@ -28,26 +28,26 @@ export default function TablaAnalisisVarianza2({ datos }) {
             <Table.Body>
                 <Table.Row key="1">
                     <Table.Cell>Intercepción</Table.Cell>
-                    <Table.Cell>40,39968209</Table.Cell>
-                    <Table.Cell>17,64181585</Table.Cell>
-                    <Table.Cell>2,28999568</Table.Cell>
-                    <Table.Cell>2,28999568</Table.Cell>
-                    <Table.Cell>Ej: 10</Table.Cell>
-                    <Table.Cell>Ej: 10</Table.Cell>
-                    <Table.Cell>Ej: 20</Table.Cell>
-                    <Table.Cell>Ej: 20</Table.Cell>
+                    <Table.Cell>{(datos.beta0).toFixed(6)}</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
 
                 </Table.Row>
                 <Table.Row key="2">
                     <Table.Cell>X</Table.Cell>
-                    <Table.Cell>Ej: 10</Table.Cell>
-                    <Table.Cell>Ej: 20</Table.Cell>
-                    <Table.Cell>Ej: 10</Table.Cell>
-                    <Table.Cell></Table.Cell>
-                    <Table.Cell></Table.Cell>
-                    <Table.Cell>Ej: 10</Table.Cell>
-                    <Table.Cell>Ej: 20</Table.Cell>
-                    <Table.Cell>Ej: 20</Table.Cell>
+                    <Table.Cell>{(datos.beta1).toFixed(6)}</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>x</Table.Cell>
 
                 </Table.Row>
             </Table.Body>

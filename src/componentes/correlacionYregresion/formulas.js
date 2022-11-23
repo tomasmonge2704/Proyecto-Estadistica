@@ -20,6 +20,30 @@ export function obtenerVarianza(datos){
     })
     return (y2 - datos.beta0 * y - datos.beta1 * XeY) / 4
 }
+export function obtenerYsombrero(datos){
+    datos.valores.forEach(function(e){
+       e.Ysombrero = datos.beta0 + (datos.beta1 * e.valorX)
+    })
+    return datos.valores
+}
+export function SumaDeCuadrados (datos){
+    const yFija = obtenerYfija(datos)
+    let regresion = 0;
+    let residuos = 0;
+    let total = 0;
+    datos.valores.forEach(function(e){
+        regresion = regresion + Math.pow(e.Ysombrero - yFija,2)
+        residuos = residuos + Math.pow(e.valorY - e.Ysombrero ,2)
+        total = total + Math.pow(e.valorY - yFija ,2)
+     })
+    return {regresion:regresion,residuos:residuos,total:total};
+}
+export function PromedioDeCuadrados(datos){
+    let regresion = datos.sumaDeCuadrados.regresion;
+    let residuos = datos.sumaDeCuadrados.residuos / (datos.N - 2);
+    let total = datos.sumaDeCuadrados.total / (datos.N - 1);
+    return {regresion:regresion,residuos:residuos,total:total};
+}
 export function obtenerErrorTipico(datos){
     let sumatoriaY = 0
     const yFija = obtenerYfija(datos)
