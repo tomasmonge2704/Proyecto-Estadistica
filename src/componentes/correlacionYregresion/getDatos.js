@@ -3,6 +3,7 @@ import Logica from "./logica"
 import { useState, useEffect } from "react";
 import { Spacer, Card, Text,Grid } from "@nextui-org/react";
 import TablaAnalisisVarianza from "../tabla/tablaAnalisisVarianza";
+import TablaAnalisisVarianza2 from "../tabla/tablaAnalisisVarianza2";
 export default function GetDatos() {
     const [datos, setDatos] = useState({ distribucion: "Normal", valores: [] });
     useEffect(() => {
@@ -25,8 +26,8 @@ export default function GetDatos() {
             </Grid.Container>
             <Spacer y={2} />
             {datos.valores.length !== 0 ? (
-                <div className='contenedorTabla'>
-                    <Card isHoverable variant="bordered">
+                <div style={{marginLeft:"2%",marginRight:"2%"}}>
+                    <Card  variant="bordered">
                         <Card.Body>
                             <Text h1 size={40}
                                      css={{
@@ -34,7 +35,9 @@ export default function GetDatos() {
                                         textAlign:"center"
                                     }}
                                 weight="bold">Analisis de la varianza</Text>
-                            <TablaAnalisisVarianza valores={datos.valores} />
+                            <TablaAnalisisVarianza datos={datos} />
+                            <Spacer y={2} />
+                            <TablaAnalisisVarianza2 datos={datos} />
                         </Card.Body>
                     </Card>
                     <Spacer y={4} />
