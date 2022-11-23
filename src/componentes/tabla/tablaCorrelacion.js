@@ -8,6 +8,7 @@ export default function TablaDatosCorrelacion({valores}) {
     <Table
     isHoverable variant="bordered"
       aria-label="Example pagination  table"
+      color="secondary"
       css={{
         height: "auto",
         Width: "100%",
@@ -20,8 +21,8 @@ export default function TablaDatosCorrelacion({valores}) {
         <Table.Column>Y</Table.Column>
         <Table.Column></Table.Column>
       </Table.Header>
-      <Table.Body>
-        {valores.length !== 0 ? (valores.map((item, index) => (
+        {valores.length !== 0 ? (<Table.Body>
+          {valores.map((item, index) => (
             <Table.Row key={`${index + 1}`}>
               <Table.Cell>{index + 1}</Table.Cell>
               <Table.Cell>{item.valorX}</Table.Cell>
@@ -37,7 +38,10 @@ export default function TablaDatosCorrelacion({valores}) {
                 </IconButton>
               </Table.Cell>
             </Table.Row>
-          ))):(<Table.Row>
+          ))}
+        </Table.Body>):(
+        <Table.Body>
+          <Table.Row key="1">
             <Table.Cell>1</Table.Cell>
             <Table.Cell>Ej: 10</Table.Cell>
             <Table.Cell>Ej: 20</Table.Cell>
@@ -46,8 +50,74 @@ export default function TablaDatosCorrelacion({valores}) {
                 <DeleteIcon size={20} fill="#FF0080" />
               </IconButton>
             </Table.Cell>
-          </Table.Row>)}
-      </Table.Body>
+          </Table.Row>
+          <Table.Row key="2">
+            <Table.Cell>2</Table.Cell>
+            <Table.Cell>Ej: 14</Table.Cell>
+            <Table.Cell>Ej: 22</Table.Cell>
+            <Table.Cell>
+              <IconButton>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </IconButton>
+            </Table.Cell>
+          </Table.Row >
+          <Table.Row key="3">
+            <Table.Cell>3</Table.Cell>
+            <Table.Cell>Ej: 13</Table.Cell>
+            <Table.Cell>Ej: 19</Table.Cell>
+            <Table.Cell>
+              <IconButton>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </IconButton>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row key="4">
+            <Table.Cell>4</Table.Cell>
+            <Table.Cell>Ej: 10</Table.Cell>
+            <Table.Cell>Ej: 20</Table.Cell>
+            <Table.Cell>
+              <IconButton>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </IconButton>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row key="5">
+            <Table.Cell>5</Table.Cell>
+            <Table.Cell>Ej: 10</Table.Cell>
+            <Table.Cell>Ej: 20</Table.Cell>
+            <Table.Cell>
+              <IconButton>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </IconButton>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row key="6">
+            <Table.Cell>6</Table.Cell>
+            <Table.Cell>Ej: 10</Table.Cell>
+            <Table.Cell>Ej: 20</Table.Cell>
+            <Table.Cell>
+              <IconButton>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </IconButton>
+            </Table.Cell>
+          </Table.Row>
+          <Table.Row key="7">
+            <Table.Cell>7</Table.Cell>
+            <Table.Cell>Ej: 10</Table.Cell>
+            <Table.Cell>Ej: 20</Table.Cell>
+            <Table.Cell>
+              <IconButton>
+                <DeleteIcon size={20} fill="#FF0080" />
+              </IconButton>
+            </Table.Cell>
+          </Table.Row>
+        </Table.Body>
+          )}
+      <Table.Pagination
+          shadow
+          noMargin
+          align="center"
+          rowsPerPage={6} />
     </Table>
   );
 }

@@ -35,8 +35,7 @@ export default function FormDatos({ datos }) {
           </Grid>
         </Grid.Container>
         <Spacer y={1} />
-
-                <TablaDatosCorrelacion valores={datos.valores}/>
+              <TablaDatosCorrelacion valores={datos.valores}/>
             </Card.Body>
         </Card>
     )
