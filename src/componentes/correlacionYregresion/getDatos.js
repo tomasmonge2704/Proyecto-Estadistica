@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { Spacer, Card, Text,Grid } from "@nextui-org/react";
 import TablaAnalisisVarianza from "../tabla/tablaAnalisisVarianza";
 import TablaAnalisisVarianza2 from "../tabla/tablaAnalisisVarianza2";
+import TablaTestIndividuales from "../tabla/tablaTestIndividuales";
+import TablaAnalisisResiduales from "../tabla/tablaAnalisisResiduales";
 export default function GetDatos() {
     const [datos, setDatos] = useState({ distribucion: "Normal", valores: [
         {
@@ -94,6 +96,30 @@ export default function GetDatos() {
                             <TablaAnalisisVarianza datos={datos} />
                             <Spacer y={2} />
                             <TablaAnalisisVarianza2 datos={datos} />
+                        </Card.Body>
+                    </Card>
+                    <Spacer y={2} />
+                    <Card  variant="bordered">
+                        <Card.Body>
+                            <Text h1 size={40}
+                                     css={{
+                                        textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                                        textAlign:"center"
+                                    }}
+                                weight="bold">Test Individuales</Text>
+                            <TablaTestIndividuales datos={datos} />
+                        </Card.Body>
+                    </Card>
+                    <Spacer y={2} />
+                    <Card  variant="bordered">
+                        <Card.Body>
+                            <Text h1 size={40}
+                                     css={{
+                                        textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                                        textAlign:"center"
+                                    }}
+                                weight="bold">Analisis de los residuales</Text>
+                            <TablaAnalisisResiduales datos={datos} />
                         </Card.Body>
                     </Card>
                     <Spacer y={4} />

@@ -27,11 +27,11 @@ export default function TablaAnalisisVarianza2({ datos }) {
             </Table.Header>
             <Table.Body>
                 <Table.Row key="1">
-                    <Table.Cell>Intercepción</Table.Cell>
+                    <Table.Cell>Ordenada al origen (𝛽⁰)</Table.Cell>
                     <Table.Cell>{(datos.beta0).toFixed(6)}</Table.Cell>
-                    <Table.Cell>x</Table.Cell>
-                    <Table.Cell>x</Table.Cell>
-                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>{(datos.desvioBeta0).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.Tbeta0).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.ProbabilidadBeta0).toFixed(6)}</Table.Cell>
                     <Table.Cell>x</Table.Cell>
                     <Table.Cell>x</Table.Cell>
                     <Table.Cell>x</Table.Cell>
@@ -39,11 +39,11 @@ export default function TablaAnalisisVarianza2({ datos }) {
 
                 </Table.Row>
                 <Table.Row key="2">
-                    <Table.Cell>X</Table.Cell>
+                    <Table.Cell>Pendiente (𝛽¹)</Table.Cell>
                     <Table.Cell>{(datos.beta1).toFixed(6)}</Table.Cell>
-                    <Table.Cell>x</Table.Cell>
-                    <Table.Cell>x</Table.Cell>
-                    <Table.Cell>x</Table.Cell>
+                    <Table.Cell>{(datos.desvioBeta1).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.Tbeta1).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.ProbabilidadBeta1).toFixed(6)}</Table.Cell>
                     <Table.Cell>x</Table.Cell>
                     <Table.Cell>x</Table.Cell>
                     <Table.Cell>x</Table.Cell>

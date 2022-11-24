@@ -1,3 +1,4 @@
+import { jStat as jStat } from 'jstat'
 
 export function obtenerRho(datos){
     const Rho = (sumarElementosXeY(datos)/ (datos.valores.length - 1)) / (obtenerDesvioX(datos) * obtenerDesvioY(datos));
@@ -19,6 +20,33 @@ export function obtenerVarianza(datos){
         XeY = XeY + (e.valorX * e.valorY)
     })
     return (y2 - datos.beta0 * y - datos.beta1 * XeY) / 4
+}
+export function obtenerValorCriticoF(datos){
+return jStat.ftest( datos.F, 1, datos.N - 2)
+}
+export function obtenerProbabilidad(tscore, n){
+return jStat.ttest( tscore, n,2)
+}
+export function obtenerDesvioBeta0(datos){
+    const xFija = obtenerXfija(datos)
+    let sumX2_Dividido_N_Menos2 = 0;
+    let varX = 0;
+    const varianza = Math.pow(datos.ErrorTipico,2) / datos.N
+    datos.valores.forEach(function(e){
+        sumX2_Dividido_N_Menos2 = sumX2_Dividido_N_Menos2 + (Math.pow(e.valorX,2) / (datos.N - 2));
+        varX = varX + Math.pow((e.valorX - xFija),2);
+     })
+     return Math.sqrt(varianza * (sumX2_Dividido_N_Menos2 / (varX / (datos.N - 2))))
+}
+export function obtenerDesvioBeta1(datos){
+    const xFija = obtenerXfija(datos)
+    let varX = 0;
+    const varianza = Math.pow(datos.ErrorTipico,2) / (datos.N - 2)
+    datos.valores.forEach(function(e){
+        varX = varX + Math.pow((e.valorX - xFija),2);
+     })
+     varX = varX / (datos.N - 2)
+     return Math.sqrt(varianza / varX)
 }
 export function obtenerYsombrero(datos){
     datos.valores.forEach(function(e){

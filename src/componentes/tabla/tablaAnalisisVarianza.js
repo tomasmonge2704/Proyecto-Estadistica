@@ -27,7 +27,7 @@ export default function TablaAnalisisVarianza({datos}) {
             <Table.Cell>{(datos.sumaDeCuadrados.regresion).toFixed(5)}</Table.Cell>
             <Table.Cell>{(datos.promedioDeCuadrados.regresion).toFixed(5)}</Table.Cell>
             <Table.Cell>{(datos.F).toFixed(5)}</Table.Cell>
-            <Table.Cell>x</Table.Cell>
+            <Table.Cell>{(datos.ValorCriticoF).toFixed(5)}</Table.Cell>
         </Table.Row>
         <Table.Row key="2">
             <Table.Cell>Residuos</Table.Cell>
