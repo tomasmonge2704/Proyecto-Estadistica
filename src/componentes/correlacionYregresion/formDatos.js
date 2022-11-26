@@ -11,7 +11,7 @@ export default function FormDatos({ datos }) {
         window.dispatchEvent(new Event("storage"));
       }
     return (
-        <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="cardConfianza">
+        <Card isHoverable variant="bordered" css={{ mw: "650px" }} className="cardConfianza">
             <Card.Body>
                 <Text h1 size={40}
                     css={{
@@ -22,10 +22,10 @@ export default function FormDatos({ datos }) {
                 <Spacer y={1} />
                 <Grid.Container gap={2} justify="center" alignItems="center">
 
-          <Grid xs={6}>
+          <Grid xs={6} justify="center" alignItems="center">
             <Input label="Valor X" placeholder="Ej: 100" type="number" size="lg" id="valorX" />
           </Grid>
-          <Grid xs={6}>
+          <Grid xs={6} justify="center" alignItems="center">
             <Input label="Valor Y" placeholder="Ej: 200" type="number" size="lg" id="valorY" />
           </Grid>
           <Grid xs={12}>

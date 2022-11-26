@@ -21,9 +21,9 @@ export default function TablaAnalisisResiduales({datos}){
           {datos.valores.map((item, index) => (
             <Table.Row key={`${index + 1}`}>
               <Table.Cell>{index + 1}</Table.Cell>
-              <Table.Cell>X</Table.Cell>
-              <Table.Cell>X</Table.Cell>
-              <Table.Cell>X</Table.Cell>
+              <Table.Cell>{(item.Ysombrero).toFixed(6)}</Table.Cell>
+              <Table.Cell>{(item.Residuo).toFixed(6)}</Table.Cell>
+              <Table.Cell>{(item.ResiduoStandar).toFixed(6)}</Table.Cell>
             </Table.Row>
           ))}
           </Table.Body>

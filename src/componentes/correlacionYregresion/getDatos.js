@@ -98,7 +98,7 @@ export default function GetDatos() {
                                      css={{
                                         textGradient: "45deg, $blue600 -20%, $pink600 50%",
                                         textAlign:"center"
-                                    }}
+                                      }}
                                 weight="bold">Test Individuales</Text>
                             <TablaTestIndividuales datos={datos} />
                         </Card.Body>

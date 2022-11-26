@@ -9,7 +9,7 @@ export default function Result({ result }) {
     };
     return (
     <>
-        <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="resultado">
+        <Card isHoverable variant="bordered" css={{ mw: "650px" }} className="resultado">
             <Card.Body>
 
                 <Text h1 size={40}

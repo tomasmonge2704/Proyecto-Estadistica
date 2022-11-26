@@ -76,9 +76,11 @@ export function obtenerDesvioBeta1(datos){
      varX = varX / (datos.N - 2)
      return Math.sqrt(varianza / varX)
 }
-export function obtenerYsombrero(datos){
+export function obtenerResiduales(datos){
     datos.valores.forEach(function(e){
-       e.Ysombrero = datos.beta0 + (datos.beta1 * e.valorX)
+       e.Ysombrero = datos.beta0 + (datos.beta1 * e.valorX);
+       e.Residuo = e.valorY - e.Ysombrero;
+       e.ResiduoStandar = Math.pow(e.valorY - e.Ysombrero,2)
     })
     return datos.valores
 }
