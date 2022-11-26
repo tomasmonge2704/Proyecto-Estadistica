@@ -13,14 +13,23 @@ export default function TablaTestIndividuales({datos}){
         >
           <Table.Header>
             <Table.Column></Table.Column>
-            <Table.Column>Grados de libertad</Table.Column>
-            <Table.Column>Suma de cuadrados</Table.Column>
-            <Table.Column>Promedio de los cuadrados</Table.Column>
-            <Table.Column>F</Table.Column>
-            <Table.Column>Valor crítico de F</Table.Column>
+            <Table.Column>Error típico</Table.Column>
+            <Table.Column>Estadístico t</Table.Column>
+            <Table.Column>Probabilidad</Table.Column>
           </Table.Header>
           <Table.Body>
-         
+          <Table.Row key="1">
+                    <Table.Cell>Ordenada al origen (𝛽⁰)</Table.Cell>
+                    <Table.Cell>{(datos.desvioBeta0).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.Tbeta0).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.ProbabilidadBeta0).toFixed(6)}</Table.Cell>
+                </Table.Row>
+                <Table.Row key="2">
+                    <Table.Cell>Pendiente (𝛽¹)</Table.Cell>
+                    <Table.Cell>{(datos.desvioBeta1).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.Tbeta1).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(datos.ProbabilidadBeta1).toFixed(6)}</Table.Cell>
+                </Table.Row>
           </Table.Body>
         </Table>
       );

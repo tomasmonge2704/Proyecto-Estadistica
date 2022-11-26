@@ -1,5 +1,5 @@
 import Result from "./result"
-import { obtenerRho,obtenerBeta1, obtenerBeta0, obtenerErrorTipico, r2Ajustado,obtenerYsombrero,SumaDeCuadrados,PromedioDeCuadrados,obtenerDesvioBeta0, obtenerDesvioBeta1,obtenerValorCriticoF, obtenerProbabilidad } from "./formulas"
+import { obtenerRho,obtenerBeta1, obtenerBeta0, obtenerErrorTipico, r2Ajustado,obtenerYsombrero,SumaDeCuadrados,PromedioDeCuadrados,obtenerDesvioBeta0, obtenerDesvioBeta1,obtenerValorCriticoF, obtenerProbabilidad} from "./formulas"
 export default function Logica({datos}) {
     if(datos.valores.length !== 0 ) {
         datos.N = datos.valores.length;
@@ -20,7 +20,6 @@ export default function Logica({datos}) {
         datos.Tbeta1 = datos.beta1 / datos.desvioBeta1;
         datos.ProbabilidadBeta0 = obtenerProbabilidad(datos.Tbeta0,(datos.N - 1));
         datos.ProbabilidadBeta1 = obtenerProbabilidad(datos.Tbeta1,(datos.N - 1));
-
     }
     return (<Result result={datos} />)
 }

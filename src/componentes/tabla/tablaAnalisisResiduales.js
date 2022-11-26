@@ -12,15 +12,20 @@ export default function TablaAnalisisResiduales({datos}){
         }}
         >
           <Table.Header>
-            <Table.Column></Table.Column>
-            <Table.Column>Grados de libertad</Table.Column>
-            <Table.Column>Suma de cuadrados</Table.Column>
-            <Table.Column>Promedio de los cuadrados</Table.Column>
-            <Table.Column>F</Table.Column>
-            <Table.Column>Valor crítico de F</Table.Column>
+            <Table.Column>Observación</Table.Column>
+            <Table.Column>Pronóstico para Y</Table.Column>
+            <Table.Column>Residuos</Table.Column>
+            <Table.Column>Residuos estándares</Table.Column>
           </Table.Header>
           <Table.Body>
-          
+          {datos.valores.map((item, index) => (
+            <Table.Row key={`${index + 1}`}>
+              <Table.Cell>{index + 1}</Table.Cell>
+              <Table.Cell>X</Table.Cell>
+              <Table.Cell>X</Table.Cell>
+              <Table.Cell>X</Table.Cell>
+            </Table.Row>
+          ))}
           </Table.Body>
         </Table>
       );

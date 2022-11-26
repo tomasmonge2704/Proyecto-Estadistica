@@ -3,11 +3,12 @@ import Logica from "./logica"
 import { useState, useEffect } from "react";
 import { Spacer, Card, Text,Grid } from "@nextui-org/react";
 import TablaAnalisisVarianza from "../tabla/tablaAnalisisVarianza";
-import TablaAnalisisVarianza2 from "../tabla/tablaAnalisisVarianza2";
+import TablaAnalisisConfianza from "../tabla/TablaAnalisisConfianza";
 import TablaTestIndividuales from "../tabla/tablaTestIndividuales";
 import TablaAnalisisResiduales from "../tabla/tablaAnalisisResiduales";
+import TablaAnalisisVarianza2 from "../tabla/tablaAnalisisVarianza2";
 export default function GetDatos() {
-    const [datos, setDatos] = useState({ distribucion: "Normal", valores: [
+    const [datos, setDatos] = useState({ distribucion: "Normal",intervalos:[95,95,99,99] ,valores: [
         {
             "valorX": 2.57,
             "valorY": 0.77,
@@ -87,15 +88,7 @@ export default function GetDatos() {
                 <div style={{marginLeft:"2%",marginRight:"2%"}}>
                     <Card  variant="bordered">
                         <Card.Body>
-                            <Text h1 size={40}
-                                     css={{
-                                        textGradient: "45deg, $blue600 -20%, $pink600 50%",
-                                        textAlign:"center"
-                                    }}
-                                weight="bold">Analisis de la varianza</Text>
-                            <TablaAnalisisVarianza datos={datos} />
-                            <Spacer y={2} />
-                            <TablaAnalisisVarianza2 datos={datos} />
+                            <TablaAnalisisConfianza datos={datos} />
                         </Card.Body>
                     </Card>
                     <Spacer y={2} />
@@ -108,6 +101,30 @@ export default function GetDatos() {
                                     }}
                                 weight="bold">Test Individuales</Text>
                             <TablaTestIndividuales datos={datos} />
+                        </Card.Body>
+                    </Card>
+                    <Spacer y={2} />
+                    <Card  variant="bordered">
+                        <Card.Body>
+                            <Text h1 size={40}
+                                     css={{
+                                        textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                                        textAlign:"center"
+                                    }}
+                                weight="bold">ANOVA</Text>
+                            <TablaAnalisisVarianza datos={datos} />
+                        </Card.Body>
+                    </Card>
+                    <Spacer y={2} />
+                    <Card  variant="bordered">
+                        <Card.Body>
+                            <Text h1 size={40}
+                                     css={{
+                                        textGradient: "45deg, $blue600 -20%, $pink600 50%",
+                                        textAlign:"center"
+                                    }}
+                                weight="bold">Test de significacion Global</Text>
+                            <TablaAnalisisVarianza2 datos={datos} />
                         </Card.Body>
                     </Card>
                     <Spacer y={2} />

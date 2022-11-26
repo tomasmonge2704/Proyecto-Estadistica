@@ -1,15 +1,17 @@
 import { Dropdown } from "@nextui-org/react";
 import React from "react";
-export default function DropdownMenue({text,numero}){
-    const [selected, setSelected] = React.useState(new Set([text + numero]));
-    const selectedValue = React.useMemo(
-      () => Array.from(selected).join(", ").replaceAll("_", " "),
-      [selected]
-    );
+export default function DropdownMenue({text,datos,indice}){
+    const [selected, setSelected] = React.useState(text + " " + datos.intervalos[indice] + "%");
+    function updateIntervalo(e){
+      datos.intervalos[indice] = Number(Object.entries(e)[0][1].match(/(\d+)/g)[0])
+      setSelected(Object.entries(e)[0][1])
+      sessionStorage.setItem('datos', JSON.stringify(datos))
+      window.dispatchEvent(new Event("storage"));
+    }
     return(
         <Dropdown>
         <Dropdown.Button flat color="secondary" light css={{ tt: "capitalize" }}>
-          {selectedValue}
+          {selected}
         </Dropdown.Button>
         <Dropdown.Menu
           aria-label="Single selection actions"
@@ -17,7 +19,7 @@ export default function DropdownMenue({text,numero}){
           disallowEmptySelection
           selectionMode="single"
           selectedKeys={selected}
-          onSelectionChange={setSelected}
+          onSelectionChange={updateIntervalo}
         >
           <Dropdown.Item key={text + " 95%"}>{text + " 95%"}</Dropdown.Item>
           <Dropdown.Item key={text + " 96%"}>{text + " 96%"}</Dropdown.Item>

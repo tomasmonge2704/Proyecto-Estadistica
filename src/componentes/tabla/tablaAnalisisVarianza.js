@@ -17,8 +17,6 @@ export default function TablaAnalisisVarianza({datos}) {
         <Table.Column>Grados de libertad</Table.Column>
         <Table.Column>Suma de cuadrados</Table.Column>
         <Table.Column>Promedio de los cuadrados</Table.Column>
-        <Table.Column>F</Table.Column>
-        <Table.Column>Valor crítico de F</Table.Column>
       </Table.Header>
       <Table.Body>
       <Table.Row key="1">
@@ -26,24 +24,18 @@ export default function TablaAnalisisVarianza({datos}) {
             <Table.Cell>1</Table.Cell>
             <Table.Cell>{(datos.sumaDeCuadrados.regresion).toFixed(5)}</Table.Cell>
             <Table.Cell>{(datos.promedioDeCuadrados.regresion).toFixed(5)}</Table.Cell>
-            <Table.Cell>{(datos.F).toFixed(5)}</Table.Cell>
-            <Table.Cell>{(datos.ValorCriticoF).toFixed(5)}</Table.Cell>
         </Table.Row>
         <Table.Row key="2">
             <Table.Cell>Residuos</Table.Cell>
             <Table.Cell>{datos.N - 2}</Table.Cell>
             <Table.Cell>{(datos.sumaDeCuadrados.residuos).toFixed(5)}</Table.Cell>
             <Table.Cell>{(datos.promedioDeCuadrados.residuos).toFixed(5)}</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
         </Table.Row>
         <Table.Row key="3">
             <Table.Cell>Total</Table.Cell>
             <Table.Cell>{datos.N - 1}</Table.Cell>
             <Table.Cell>{(datos.sumaDeCuadrados.total).toFixed(5)}</Table.Cell>
             <Table.Cell>{(datos.promedioDeCuadrados.total).toFixed(5)}</Table.Cell>
-            <Table.Cell></Table.Cell>
-            <Table.Cell></Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

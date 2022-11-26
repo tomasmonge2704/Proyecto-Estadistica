@@ -7,6 +7,34 @@ export function obtenerRho(datos){
 export function obtenerBeta1(datos){
     return sumarElementosXeY(datos) / denominadorBeta1(datos)
 }
+export function obtenerConfianzaBeta1(datos,confianza){
+    const xFija = obtenerXfija(datos);
+    let sumartoria = 0;
+    datos.valores.forEach(function(e){
+        sumartoria = sumartoria + Math.pow((e.valorX - xFija),2);
+     })
+    const x = 1 -((1 - (confianza / 100)) / 2)
+    const T = jStat.studentt.inv( x, (datos.N - 2) )
+    const inferior = datos.beta1 - T * (datos.ErrorTipico / Math.sqrt(sumartoria))
+    const superior = datos.beta1 + T * (datos.ErrorTipico / Math.sqrt(sumartoria))
+    return {inferior:inferior,superior:superior}
+}
+export function obtenerConfianzaBeta0(datos,confianza){
+    const xFija = obtenerXfija(datos);
+    let sumartoria = 0;
+    let sumartoria2 = 0;
+
+    datos.valores.forEach(function(e){
+        sumartoria = sumartoria + Math.pow((e.valorX - xFija),2);
+        sumartoria2 = sumartoria2 + Math.pow(e.valorX,2);
+
+     })
+    const x = 1 -((1 - (confianza / 100)) / 2)
+    const T = jStat.studentt.inv( x, (datos.N - 2) )
+    const inferior = datos.beta0 - T * ((datos.ErrorTipico * Math.sqrt(sumartoria2)) / Math.sqrt(datos.N * sumartoria))
+    const superior = datos.beta0 + T * ((datos.ErrorTipico * Math.sqrt(sumartoria2)) / Math.sqrt(datos.N * sumartoria))
+    return {inferior:inferior,superior:superior}
+}
 export function obtenerBeta0(datos){
     return obtenerYfija(datos) - (obtenerBeta1(datos) * obtenerXfija(datos))
 }
