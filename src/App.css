@@ -5,6 +5,10 @@
 		font-size: 16px;
 	}
 }
+table input{
+  position: relative;
+  z-index: 1000;
+}
 #chart_div{
   width: 1200px;
   height: 600px;
