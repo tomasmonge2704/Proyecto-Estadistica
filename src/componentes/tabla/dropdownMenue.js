@@ -1,9 +1,9 @@
 import { Dropdown } from "@nextui-org/react";
 import React from "react";
 export default function DropdownMenue({text,datos,indice}){
-    const [selected, setSelected] = React.useState(text + " " + datos.intervalos[indice] + "%");
+    const [selected, setSelected] = React.useState(text + " " + datos.intervalos.confianza[indice] + "%");
     function updateIntervalo(e){
-      datos.intervalos[indice] = Number(Object.entries(e)[0][1].match(/(\d+)/g)[0])
+      datos.intervalos.confianza[indice] = Number(Object.entries(e)[0][1].match(/(\d+)/g)[0])
       setSelected(Object.entries(e)[0][1])
       sessionStorage.setItem('datos', JSON.stringify(datos))
       window.dispatchEvent(new Event("storage"));

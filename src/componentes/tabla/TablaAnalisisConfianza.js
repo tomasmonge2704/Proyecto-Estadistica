@@ -25,19 +25,19 @@ export default function TablaAnalisisConfianza({ datos }) {
                 <Table.Row key="1">
                     <Table.Cell>Ordenada al origen (𝛽⁰)</Table.Cell>
                     <Table.Cell>{(datos.beta0).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos[0]).inferior).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos[1]).superior).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos[2]).inferior).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos[3]).superior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos.confianza[0]).inferior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos.confianza[1]).superior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos.confianza[2]).inferior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta0(datos,datos.intervalos.confianza[3]).superior).toFixed(6)}</Table.Cell>
 
                 </Table.Row>
                 <Table.Row key="2">
                     <Table.Cell>Pendiente (𝛽¹)</Table.Cell>
                     <Table.Cell>{(datos.beta1).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos[0]).inferior).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos[1]).superior).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos[2]).inferior).toFixed(6)}</Table.Cell>
-                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos[3]).superior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos.confianza[0]).inferior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos.confianza[1]).superior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos.confianza[2]).inferior).toFixed(6)}</Table.Cell>
+                    <Table.Cell>{(obtenerConfianzaBeta1(datos,datos.intervalos.confianza[3]).superior).toFixed(6)}</Table.Cell>
 
                 </Table.Row>
             </Table.Body>
