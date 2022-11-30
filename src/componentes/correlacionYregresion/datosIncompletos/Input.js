@@ -9,6 +9,7 @@ class InputNumber extends React.Component {
   this.focusTextInput = this.focusTextInput.bind(this);
   this.onChange = props.onChange
   this.name = props.name
+  this.value = props.value
 }
 
 focusTextInput() {
@@ -17,7 +18,7 @@ focusTextInput() {
 
 render() {
  return (
-   <Input type="number"ref={this.textInput}onClick={this.focusTextInput} name={this.name} onChange={this.onChange} size="md" aria-label="test"/>
+   <Input type="number"ref={this.textInput}onClick={this.focusTextInput} value={this.value} name={this.name} onMouseOut={this.onChange} size="md" aria-label="test"/>
   );
  }
 }

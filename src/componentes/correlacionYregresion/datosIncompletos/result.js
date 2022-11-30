@@ -30,11 +30,13 @@ export default function Result({ datos }) {
                         </Grid>
                         <Grid xs={6}>
                             <Spacer y={1} />
-                                <Input fullWidth type="text"  onChange={(e) => {datos.RhoCuadrado = Number(e.target.value);updateDatos(datos)}} label="Coeficiente de Determinación (ρ²)" />
+                                {datos.RhoCuadrado ? <Input readOnly label="Coeficiente de Determinación (ρ²)" placeholder={datos.RhoCuadrado} initialValue={datos.RhoCuadrado} /> : <Input fullWidth type="text"  onChange={(e) => {datos.RhoCuadrado = Number(e.target.value);updateDatos(datos)}} label="Coeficiente de Determinación (ρ²)" />}
                         </Grid>
                         <Grid xs={12}>
                             <Spacer y={1} />
-                                <Input fullWidth type="number"  onChange={(e) => {datos.RhoCuadradoAjustado = Number(e.target.value);updateDatos(datos)}} label="R² ajustado" />
+                                {datos.RhoCuadradoAjustado ? <Input readOnly label="R² ajustado" placeholder={datos.RhoCuadradoAjustado} initialValue={datos.RhoCuadradoAjustado} /> : 
+                                <Input fullWidth type="number"  onChange={(e) => {datos.RhoCuadradoAjustado = Number(e.target.value);updateDatos(datos)}} label="R² ajustado" /> }
+                                
                         </Grid>
                         <Grid xs={12}>
                             <Spacer y={1} />
@@ -42,7 +44,9 @@ export default function Result({ datos }) {
                         </Grid>
                         <Grid xs={12}>
                             <Spacer y={1} />
-                                <Input fullWidth type="number"  onChange={(e) => {datos.N = Number(e.target.value);updateDatos(datos)}} label="Observaciones" />
+                            {datos.N ? <Input fullWidth label="Observaciones" placeholder={datos.N} initialValue={datos.N} onChange={(e) => {datos.N = Number(e.target.value);updateDatos(datos)}} /> :
+                            <Input fullWidth type="number"  onChange={(e) => {datos.N = Number(e.target.value);updateDatos(datos)}} label="Observaciones" />}
+                                
                         </Grid>
                         <Grid xs={6}>
                             <Spacer y={1} />

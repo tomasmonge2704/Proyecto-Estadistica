@@ -1,7 +1,13 @@
 import { Table} from "@nextui-org/react";
 import React from "react";
-
+import InputNumber from "./Input";
 export default function TablaAnalisisVarianza({datos}) {
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
+        datos[name] = Number(value)
+        sessionStorage.setItem('datos', JSON.stringify(datos));
+        window.dispatchEvent(new Event("storage"));
+    };
   return (
     <Table
     variant="bordered"
@@ -22,20 +28,20 @@ export default function TablaAnalisisVarianza({datos}) {
       <Table.Row key="1">
             <Table.Cell>Regresión</Table.Cell>
             <Table.Cell>1</Table.Cell>
-            <Table.Cell>{(datos.sumaDeCuadrados.regresion).toFixed(5)}</Table.Cell>
-            <Table.Cell>{(datos.promedioDeCuadrados.regresion).toFixed(5)}</Table.Cell>
+            <Table.Cell>{datos.sumaDeCuadradosRegresion ? (datos.sumaDeCuadradosRegresion).toFixed(5) : <InputNumber name="sumaDeCuadradosRegresion" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell>{datos.promedioDeCuadradosRegresion ? (datos.promedioDeCuadradosRegresion).toFixed(5) : <InputNumber name="promedioDeCuadradosRegresion" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
         </Table.Row>
         <Table.Row key="2">
             <Table.Cell>Residuos</Table.Cell>
-            <Table.Cell>{datos.N - 2}</Table.Cell>
-            <Table.Cell>{(datos.sumaDeCuadrados.residuos).toFixed(5)}</Table.Cell>
-            <Table.Cell>{(datos.promedioDeCuadrados.residuos).toFixed(5)}</Table.Cell>
+            <Table.Cell>{datos.N ? datos.N - 2 : <InputNumber name="N2" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell>{datos.sumaDeCuadradosResiduos ? (datos.sumaDeCuadradosResiduos).toFixed(5) : <InputNumber name="sumaDeCuadradosResiduos" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell>{datos.promedioDeCuadradosResiduos ? (datos.promedioDeCuadradosResiduos).toFixed(5) : <InputNumber name="promedioDeCuadradosResiduos" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
         </Table.Row>
         <Table.Row key="3">
             <Table.Cell>Total</Table.Cell>
-            <Table.Cell>{datos.N - 1}</Table.Cell>
-            <Table.Cell>{(datos.sumaDeCuadrados.total).toFixed(5)}</Table.Cell>
-            <Table.Cell>{(datos.promedioDeCuadrados.total).toFixed(5)}</Table.Cell>
+            <Table.Cell>{datos.N ? datos.N - 1 : <InputNumber name="N1" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell>{datos.sumaDeCuadradosTotal ? (datos.sumaDeCuadradosTotal).toFixed(5) : <InputNumber name="sumaDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell>{datos.promedioDeCuadradosTotal ? (datos.promedioDeCuadradosTotal).toFixed(5) : <InputNumber name="promedioDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

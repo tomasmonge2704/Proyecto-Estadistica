@@ -14,7 +14,6 @@ export default function TablaAnalisisConfianza({ datos }) {
         sessionStorage.setItem('datos', JSON.stringify(datos));
         window.dispatchEvent(new Event("storage"));
     };
-    console.log(datos.intervalos.data)
     return (
         <Table
             variant="bordered"
