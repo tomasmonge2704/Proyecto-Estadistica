@@ -24,8 +24,8 @@ export default function TablaAnalisisVarianza2({datos}) {
       </Table.Header>
       <Table.Body>
       <Table.Row key="1">
-            <Table.Cell>{datos.F ? (datos.F).toFixed(5) : <InputNumber name="F" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
-            <Table.Cell>{datos.ValorCriticoF ? (datos.ValorCriticoF).toFixed(5) : <InputNumber name="ValorCriticoF" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell><InputNumber value={datos.F ? (datos.F).toFixed(5) : ""} name="F" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell><InputNumber value={datos.ValorCriticoF ? (datos.ValorCriticoF).toFixed(5) : ""} name="ValorCriticoF" onChange={(e) => onChangeInput(e)}/></Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

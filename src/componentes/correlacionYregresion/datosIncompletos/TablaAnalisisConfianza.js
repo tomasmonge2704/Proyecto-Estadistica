@@ -36,11 +36,11 @@ export default function TablaAnalisisConfianza({ datos }) {
                 {datos.intervalos.data.map(({ row, coef, inf1, sup1, inf2, sup2 }, index) => (
                     <Table.Row key={index}>
                         <Table.Cell>{row}</Table.Cell>
-                        <Table.Cell>{coef ? coef : <InputNumber name="coef" onChange={(e) => onChangeInput(e, index)} />}</Table.Cell>
-                        <Table.Cell>{inf1 ? inf1 : <InputNumber name="inf1" onChange={(e) => onChangeInput(e, index)} />}</Table.Cell>
-                        <Table.Cell>{sup1 ? sup1 : <InputNumber name="sup1" onChange={(e) => onChangeInput(e, index)} />}</Table.Cell>
-                        <Table.Cell>{inf2 ? inf2 : <InputNumber name="inf2" onChange={(e) => onChangeInput(e, index)} />}</Table.Cell>
-                        <Table.Cell>{sup2 ? sup2 : <InputNumber name="sup2" onChange={(e) => onChangeInput(e, index)} />}</Table.Cell>
+                        <Table.Cell><InputNumber value={coef ? coef : ""} name="coef" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber value={inf1 ? inf1 : ""} name="inf1" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber value={sup1 ? sup1 : ""} name="sup1" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber value={inf2 ? inf2 : ""} name="inf2" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber value={sup2 ? sup2 : ""}name="sup2" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
                     </Table.Row>
                 ))}
             </Table.Body>

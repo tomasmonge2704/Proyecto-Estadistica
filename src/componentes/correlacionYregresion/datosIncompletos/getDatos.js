@@ -1,8 +1,8 @@
 import Logica from "./logica"
 import { useState, useEffect } from "react";
-
+import Contenedor from "./contenedor";
 export default function GetDatosIncompletos() {
-    const [datos, setDatos] = useState({ distribucion: "Normal",intervalos:{confianza:[95,95,99,99],data:[
+    const [datos, setDatos] = useState(Logica({ distribucion: "Normal",intervalos:{confianza:[95,95,99,99],data:[
         {
             row: 'Ordenada al origen (𝛽⁰)',
             coef:0,
@@ -19,15 +19,16 @@ export default function GetDatosIncompletos() {
             inf2: 0,
             sup2: 0
         }
-    ]} ,valores: [] });
+    ]} ,valores: [] }));
     useEffect(() => {
         sessionStorage.setItem('datos', JSON.stringify(datos));
         window.addEventListener('storage', () => {
             const datosStorage = JSON.parse(sessionStorage.getItem('datos'));
-            setDatos(datosStorage)
+            setDatos(Logica(datosStorage))
         })
     }, []);
+    
     return (
-        <Logica datos={datos} />
+        <Contenedor datos={datos} />
     )
 }

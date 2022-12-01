@@ -18,7 +18,7 @@ focusTextInput() {
 
 render() {
  return (
-   <Input type="number"ref={this.textInput}onClick={this.focusTextInput} value={this.value} name={this.name} onMouseOut={this.onChange} size="md" aria-label="test"/>
+   <Input type="number"ref={this.textInput}onClick={this.focusTextInput} value={this.value} name={this.name} onChange={this.onChange} size="md" aria-label="test"/>
   );
  }
 }

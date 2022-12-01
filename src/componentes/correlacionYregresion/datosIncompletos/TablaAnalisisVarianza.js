@@ -28,20 +28,20 @@ export default function TablaAnalisisVarianza({datos}) {
       <Table.Row key="1">
             <Table.Cell>Regresión</Table.Cell>
             <Table.Cell>1</Table.Cell>
-            <Table.Cell>{datos.sumaDeCuadradosRegresion ? (datos.sumaDeCuadradosRegresion).toFixed(5) : <InputNumber name="sumaDeCuadradosRegresion" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
-            <Table.Cell>{datos.promedioDeCuadradosRegresion ? (datos.promedioDeCuadradosRegresion).toFixed(5) : <InputNumber name="promedioDeCuadradosRegresion" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell><InputNumber value={datos.sumaDeCuadradosRegresion ? (datos.sumaDeCuadradosRegresion).toFixed(5) : ""} name="sumaDeCuadradosRegresion" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell><InputNumber value={datos.promedioDeCuadradosRegresion ? (datos.promedioDeCuadradosRegresion).toFixed(5) : ""} name="promedioDeCuadradosRegresion" onChange={(e) => onChangeInput(e)}/></Table.Cell>
         </Table.Row>
         <Table.Row key="2">
             <Table.Cell>Residuos</Table.Cell>
-            <Table.Cell>{datos.N ? datos.N - 2 : <InputNumber name="N2" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
-            <Table.Cell>{datos.sumaDeCuadradosResiduos ? (datos.sumaDeCuadradosResiduos).toFixed(5) : <InputNumber name="sumaDeCuadradosResiduos" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
-            <Table.Cell>{datos.promedioDeCuadradosResiduos ? (datos.promedioDeCuadradosResiduos).toFixed(5) : <InputNumber name="promedioDeCuadradosResiduos" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell><InputNumber value={datos.N ? datos.N - 2 : ""} name="N2" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell><InputNumber value={datos.sumaDeCuadradosResiduos ? (datos.sumaDeCuadradosResiduos).toFixed(5) : ""} name="sumaDeCuadradosResiduos" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell><InputNumber value={datos.promedioDeCuadradosResiduos ? (datos.promedioDeCuadradosResiduos).toFixed(5) : ""} name="promedioDeCuadradosResiduos" onChange={(e) => onChangeInput(e)}/></Table.Cell>
         </Table.Row>
         <Table.Row key="3">
             <Table.Cell>Total</Table.Cell>
-            <Table.Cell>{datos.N ? datos.N - 1 : <InputNumber name="N1" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
-            <Table.Cell>{datos.sumaDeCuadradosTotal ? (datos.sumaDeCuadradosTotal).toFixed(5) : <InputNumber name="sumaDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
-            <Table.Cell>{datos.promedioDeCuadradosTotal ? (datos.promedioDeCuadradosTotal).toFixed(5) : <InputNumber name="promedioDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell><InputNumber value={datos.N ? datos.N - 1 : ""} name="N1" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell><InputNumber value={datos.sumaDeCuadradosTotal ? (datos.sumaDeCuadradosTotal).toFixed(5) : ""} name="sumaDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell><InputNumber value={datos.promedioDeCuadradosTotal ? (datos.promedioDeCuadradosTotal).toFixed(5) : ""} name="promedioDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/></Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>
