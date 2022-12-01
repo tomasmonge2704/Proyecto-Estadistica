@@ -1,7 +1,13 @@
-import { Table, Input} from "@nextui-org/react";
+import { Table} from "@nextui-org/react";
 import React from "react";
-
+import InputNumber from "./Input";
 export default function TablaAnalisisVarianza2({datos}) {
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
+        datos[name] = Number(value)
+        sessionStorage.setItem('datos', JSON.stringify(datos));
+        window.dispatchEvent(new Event("storage"));
+    };
   return (
     <Table
     variant="bordered"
@@ -18,8 +24,8 @@ export default function TablaAnalisisVarianza2({datos}) {
       </Table.Header>
       <Table.Body>
       <Table.Row key="1">
-            <Table.Cell>{(datos.F).toFixed(5)}</Table.Cell>
-            <Table.Cell>{(datos.ValorCriticoF).toFixed(5)}</Table.Cell>
+            <Table.Cell>{datos.F ? (datos.F).toFixed(5) : <InputNumber name="F" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
+            <Table.Cell>{datos.ValorCriticoF ? (datos.ValorCriticoF).toFixed(5) : <InputNumber name="ValorCriticoF" onChange={(e) => onChangeInput(e)}/>}</Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>
