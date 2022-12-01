@@ -19,15 +19,16 @@ export default function GetDatosIncompletos() {
             inf2: 0,
             sup2: 0
         }
-    ]} ,valores: [] }));
+    ]},
+    valores: [] }));
     useEffect(() => {
         sessionStorage.setItem('datos', JSON.stringify(datos));
         window.addEventListener('storage', () => {
-            const datosStorage = JSON.parse(sessionStorage.getItem('datos'));
-            setDatos(Logica(datosStorage))
+            const datosStorage = Logica(JSON.parse(sessionStorage.getItem('datos')));
+            setDatos(datosStorage);
+            sessionStorage.setItem('datos', JSON.stringify(datosStorage));
         })
     }, []);
-    
     return (
         <Contenedor datos={datos} />
     )

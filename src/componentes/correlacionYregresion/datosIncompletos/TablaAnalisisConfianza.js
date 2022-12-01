@@ -10,6 +10,7 @@ export default function TablaAnalisisConfianza({ datos }) {
         const element = copy[index];
         element[name] = Number(value);
         setData(copy);
+        datos = JSON.parse(sessionStorage.getItem('datos'));
         datos.intervalos.data = data
         sessionStorage.setItem('datos', JSON.stringify(datos));
         window.dispatchEvent(new Event("storage"));
@@ -36,11 +37,11 @@ export default function TablaAnalisisConfianza({ datos }) {
                 {datos.intervalos.data.map(({ row, coef, inf1, sup1, inf2, sup2 }, index) => (
                     <Table.Row key={index}>
                         <Table.Cell>{row}</Table.Cell>
-                        <Table.Cell><InputNumber value={coef ? coef : ""} name="coef" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
-                        <Table.Cell><InputNumber value={inf1 ? inf1 : ""} name="inf1" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
-                        <Table.Cell><InputNumber value={sup1 ? sup1 : ""} name="sup1" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
-                        <Table.Cell><InputNumber value={inf2 ? inf2 : ""} name="inf2" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
-                        <Table.Cell><InputNumber value={sup2 ? sup2 : ""}name="sup2" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber key={coef} value={coef ? coef : ""} name="coef" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber key={inf1} value={inf1 ? inf1 : ""} name="inf1" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber key={sup1} value={sup1 ? sup1 : ""} name="sup1" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber key={inf2} value={inf2 ? inf2 : ""} name="inf2" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
+                        <Table.Cell><InputNumber key={sup2} value={sup2 ? sup2 : ""}name="sup2" onChange={(e) => onChangeInput(e, index)} /></Table.Cell>
                     </Table.Row>
                 ))}
             </Table.Body>
