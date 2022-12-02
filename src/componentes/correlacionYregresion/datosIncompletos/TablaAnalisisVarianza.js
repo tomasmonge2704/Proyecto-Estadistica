@@ -42,7 +42,7 @@ export default function TablaAnalisisVarianza({datos}) {
             <Table.Cell>Total</Table.Cell>
             <Table.Cell><InputNumber key={datos.N1} value={datos.N1} name="N1" onChange={(e) => onChangeInput(e)}/></Table.Cell>
             <Table.Cell><InputNumber key={datos.sumaDeCuadradosTotal} value={datos.sumaDeCuadradosTotal ? (datos.sumaDeCuadradosTotal).toFixed(5) : ""} name="sumaDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/></Table.Cell>
-            <Table.Cell><InputNumber key={datos.promedioDeCuadradosTotal} value={datos.promedioDeCuadradosTotal ? (datos.promedioDeCuadradosTotal).toFixed(5) : ""} name="promedioDeCuadradosTotal" onChange={(e) => onChangeInput(e)}/></Table.Cell>
+            <Table.Cell></Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>
