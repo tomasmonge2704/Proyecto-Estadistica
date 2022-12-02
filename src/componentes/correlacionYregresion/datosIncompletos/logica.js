@@ -10,6 +10,7 @@ export default function Logica(datos) {
     obtenerN(datos)
     obtenerPromedioDeCuadradosRegresion(datos)
     obtenerPromedioDeCuadradosResiduos(datos)
+    obtenerPromedioDeCuadradosTotal(datos)
     obtenerSumaDeCuadradosRegresion(datos)
     obtenerSumaDeCuadradosResiduos(datos)
     obtenersumaDeCuadradosTotal(datos)
@@ -71,6 +72,9 @@ function obtenerPromedioDeCuadradosRegresion(datos){
 function obtenerPromedioDeCuadradosResiduos(datos){
     if(!datos.promedioDeCuadradosResiduos && datos.ErrorTipico) datos.promedioDeCuadradosResiduos = Math.pow(datos.ErrorTipico,2);
     if(!datos.promedioDeCuadradosResiduos && datos.sumaDeCuadradosResiduos && datos.N2) datos.promedioDeCuadradosResiduos = datos.sumaDeCuadradosResiduos / datos.N2;
+}
+function obtenerPromedioDeCuadradosTotal(datos){
+    if(!datos.PromedioDeCuadradosTotal && datos.N1 && datos.sumaDeCuadradosTotal) datos.PromedioDeCuadradosTotal = datos.sumaDeCuadradosTotal / datos.N1;
 }
 function obtenerSumaDeCuadradosRegresion(datos){
     if(!datos.sumaDeCuadradosRegresion && datos.sumaDeCuadradosTotal && datos.sumaDeCuadradosResiduos) datos.sumaDeCuadradosRegresion = datos.sumaDeCuadradosTotal - datos.sumaDeCuadradosResiduos;

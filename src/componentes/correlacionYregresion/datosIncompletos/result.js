@@ -51,7 +51,11 @@ export default function Result({ datos }) {
                                 Ver formulas
                             </Button>
                         </Grid>
-                        
+                        {datos.Rho ? <Text blockquote css={{ textAlign: "center" }}>{datos.Rho > 0.25 ? `Como Rho es mayor a 0,25 existe relacion entre variables. El ${datos.RhoCuadrado} de las variaciones de "y" pueden ser explicadas como consecuencias de las variaciones que se producen en "x"` 
+                        : `Como Rho es menor a 0,25 no existe relacion entre variables. Solo el ${datos.RhoCuadrado} de las variaciones de "y" pueden ser explicadas como consecuencias de las variaciones que se producen en "x"`}</Text> 
+                        : <></>}
+                        {datos.beta1 ? <Text blockquote css={{ textAlign: "center" }}>{`independientemente de ${datos.beta1} lo ganado es: ${datos.beta0}. Por cada adicional se va a incrementar en ${datos.beta1}`}</Text> :<></>}
+                        {datos.PromedioDeCuadradosTotal ? <Text blockquote css={{ textAlign: "center" }}>La variabilidad de Y es de: {datos.PromedioDeCuadradosTotal} medida en terminos de varianza insesgada</Text> : <></>}
                         </Grid.Container>
             </Card.Body>
         </Card>
