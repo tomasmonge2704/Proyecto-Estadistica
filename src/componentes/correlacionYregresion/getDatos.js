@@ -7,6 +7,7 @@ import TablaAnalisisConfianza from "../tabla/TablaAnalisisConfianza";
 import TablaTestIndividuales from "../tabla/tablaTestIndividuales";
 import TablaAnalisisResiduales from "../tabla/tablaAnalisisResiduales";
 import TablaAnalisisVarianza2 from "../tabla/tablaAnalisisVarianza2";
+import GraficoCorrelacion from "../graficos/correlacion";
 export default function GetDatosXeY() {
     const [datos, setDatos] = useState({ distribucion: "Normal",intervalos:{confianza:[95,95,99,99]} ,valores:[] });
     useEffect(() => {
@@ -16,6 +17,7 @@ export default function GetDatosXeY() {
             setDatos(datosStorage)
         })
     }, []);
+
     return (
         <>
             <Spacer y={2} />
@@ -30,6 +32,8 @@ export default function GetDatosXeY() {
             <Spacer y={2} />
             {datos.valores.length > 1 ? (
                 <div style={{marginLeft:"2%",marginRight:"2%"}}>
+                    <GraficoCorrelacion datos={datos}/>                 
+                    <Spacer y={2} />
                     <Card  variant="bordered">
                         <Card.Body>
                             <TablaAnalisisConfianza datos={datos} />

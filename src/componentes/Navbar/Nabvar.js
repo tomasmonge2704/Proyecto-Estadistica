@@ -25,10 +25,6 @@ export default function NavBar ({page}) {
             },
           }}
         >
-          <AcmeLogo />
-          <Text b color="inherit" hideIn="xs">
-            ACME
-          </Text>
         </Navbar.Brand>
         <Navbar.Content
           enableCursorHighlight

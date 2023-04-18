@@ -4,7 +4,7 @@ export default function InicioHipotesis ({page}){
     return (
         <>
         <NavBar page={page}/>
-        <div style={{display:"flex",textAlign:"center"}}>
+        <div style={{display:"flex",justifyContent:"center"}}>
             <Text h2>Proximamente...</Text>
         </div>
         </>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Intervalo_de_confianza from './formDatos';
 import { Spacer } from '@nextui-org/react';
 import LogicaProporcion from "./logica";
-import GraficoArea from "../grafico";
+import GraficoIntervaloConfianza from "../../graficos/intConfianza";
 export default function GetDatosProporcion() {
     const [datos, setDatos] = useState({distribucion:"Normal",valores:[]});
     useEffect(() => {
@@ -50,6 +50,6 @@ export default function GetDatosProporcion() {
                 <Spacer y={2} />
                 <LogicaProporcion datos={datos}/>
             </div>
-            <GraficoArea/>
+            <GraficoIntervaloConfianza datos={datos}/>
         </>)
 }

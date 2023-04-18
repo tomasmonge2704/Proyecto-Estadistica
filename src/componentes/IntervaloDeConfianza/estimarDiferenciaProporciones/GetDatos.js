@@ -4,7 +4,7 @@ import Intervalo_de_confianza2 from "./formDatos2";
 import { Spacer } from '@nextui-org/react';
 import TablaDatos from "../../tabla/tablaDatos";
 import Logica from "./logica";
-import GraficoArea from "../grafico";
+import GraficoIntervaloConfianza from "../../graficos/intConfianza";
 export default function GetDatosDiferenciaProporciones() {
     const [datos, setDatos] = useState({distribucion:"Normal",valores:[]});
     useEffect(() => {
@@ -96,7 +96,7 @@ export default function GetDatosDiferenciaProporciones() {
                 <Spacer y={2} />
                 <Logica datos={datos}/>
             </div>
-            <GraficoArea/>
+            <GraficoIntervaloConfianza datos={datos}/>
             {datos.valores.length !== 0 ? (<div className='contenedorTabla'>
                 <TablaDatos valores={datos.valores} />
                 <Spacer y={4} />
