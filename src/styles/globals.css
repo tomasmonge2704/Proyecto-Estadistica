@@ -1,0 +1,45 @@
+@tailwind components;
+@tailwind utilities;
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 16px;
+	}
+}
+table input{
+  position: relative;
+  z-index: 1000;
+}
+#chart_div{
+  width: 1200px;
+  height: 600px;
+  margin: 5px;
+}
+.contenedorInicio {
+display: flex;
+justify-content: space-evenly;
+align-content: center;
+margin: 3%;
+}
+.contenedorTabla{
+  margin-left: 9%;
+  margin-right: 9%;
+}
+ /* For Mobile Phones Portrait or Landscape View */
+ @media screen and (max-device-width: 640px) {
+  .contenedorInicio{
+    flex-wrap: wrap;
+    padding: 8%;
+  }
+  .contenedorTabla{
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-bottom: 15%;
+  }
+  .ModalDatos{
+    margin: 11%;
+  }
+
+}
