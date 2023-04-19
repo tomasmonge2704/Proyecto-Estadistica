@@ -1,10 +1,4 @@
 import { Card, Grid,Modal,Text,Row, useTheme,Link} from "@nextui-org/react";
-import img1 from "../../images/image004.png"
-import img2 from "../../images/proporcion.png"
-import img3 from "../../images/varianza.png"
-import img4 from "../../images/diferenciaMedias.png"
-import img5 from "../../images/diferenciaProporciones.png"
-import img6 from "../../images/estimarN.png"
 import React from "react";
 import isMobile from "is-mobile";
 
@@ -13,34 +7,34 @@ export default function ModalTipoDeEstimacion() {
         {
             title: "Estimacion de la Media Poblacional",
             href:"/confianza/media",
-            img: img1.src
+            img:"image004.png"
         },
         {
             title: "Estimacion del tamaño de Muestra",
             href:"/confianza/N",
-            img: img6.src
+            img: "estimarN.png"
         },
         {
             title: "Estimacion de la Proporcion Poblacional",
             href:"/confianza/proporcion-poblacional",
-            img: img2.src
+            img: "proporcion.png"
         },
         {
             title: "Estimacion de la Varianza",
             href:"/confianza/varianza",
-            img: img3.src
+            img: "varianza.png"
         }
         ,
         {
             title: "Estimacion de la Diferencia de Medias",
             href:"/confianza/diferencia-medias",
-            img: img4.src
+            img: "diferenciaMedias.png"
         }
         ,
         {
             title: "Estimacion de la Diferencia de Proporciones",
             href:"/confianza/diferencia-proporciones",
-            img: img5.src
+            img: "diferenciaProporciones.png"
         }
     ];
     const { isDark, type } = useTheme();

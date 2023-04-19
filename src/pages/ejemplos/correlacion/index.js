@@ -2,20 +2,18 @@ import NavBar from "@/components/navbar/navBar";
 import { Card, Grid,Modal,Text,Row, useTheme,Link} from "@nextui-org/react";
 import React from "react";
 import isMobile from "is-mobile";
-import img1 from "../../images/datosXeY.png";
-import img2 from "../../images/datosIncompletos.png";
 
 export default function ModalCorrelacionLineal() {
     const list = [
         {
             title: "Datos con tabla X e Y",
             href:"/correlacion/datos",
-            img: img1.src
+            img: "datosXeY.png"
         },
         {
             title: "Datos Incompletos",
             href:"/correlacion/datos-incompletos",
-            img: img2.src
+            img: "datosIncompletos.png"
         }
     
     ];

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Intervalo_de_confianza from './formDatos';
-import { Spacer } from '@nextui-org/react';
+import { Spacer,Container,Text } from '@nextui-org/react';
 import LogicaProporcion from "./logica";
 import NavBar from "@/components/navbar/navBar";
 import GraficoIntervaloConfianza from "@/components/graficos/intConfianza";
@@ -68,6 +68,25 @@ export default function GetDatosEstimarN() {
     return (
         <>
             <NavBar page={"/confianza"}/>
+            <Spacer y={2} />
+            <Container justify="center" css={{ textAlign: "center" }}>
+        <Text
+          h1
+          size={60}
+          css={{
+            textGradient: "45deg, $blue600 -20%, $pink600 50%",
+          }}
+          weight="bold"
+        >
+          Enunciado
+        </Text>
+        <Text>
+          Estimar el tamaño de la poblacion, con una proporcion de elementos = 0,35, con un error de muestreo no superior = 0,05 y un IC del 95%
+        </Text>
+        <Text>
+          Resultado esperado: n = 350
+        </Text>
+      </Container>
             <div className="contenedorInicio">
                 <Intervalo_de_confianza datos={datos} />
                 <Spacer y={2} />

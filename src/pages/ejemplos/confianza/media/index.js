@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Intervalo_de_confianza from './formDatos';
-import { Spacer } from '@nextui-org/react';
+import { Spacer,Container,Text } from '@nextui-org/react';
 import TablaDatos from "@/components/tabla/tablaDatos";
 import Logica from "./logica";
 import NavBar from "@/components/navbar/navBar";
@@ -91,6 +91,25 @@ export default function GetDatosMedia() {
     return (
         <>
             <NavBar page={"/confianza"}/>
+            <Spacer y={2} />
+            <Container justify="center" css={{ textAlign: "center" }}>
+        <Text
+          h1
+          size={60}
+          css={{
+            textGradient: "45deg, $blue600 -20%, $pink600 50%",
+          }}
+          weight="bold"
+        >
+          Enunciado
+        </Text>
+        <Text>
+          Estimar la media poblacional de una muestra de 250 personas, con una media de 90, un desvio de 20 y un IC del 95%
+        </Text>
+        <Text>
+          Resultado esperado: 87.9194 ≤ μ ≤ 92.0806
+        </Text>
+      </Container>
             <div className="contenedorInicio">
                 <Intervalo_de_confianza datos={datos} />
                 <Spacer y={2} />
