@@ -1,7 +1,7 @@
 import { Spacer, Card, Text, Input, Button, Modal, Row, Grid, Switch } from "@nextui-org/react";
 import ModalTipoDeDatos from "@/components/modal/modalTipoDeDatos";
 import React from "react";
-export default function Intervalo_de_confianza2({ datos }) {
+export default function Intervalo_de_confianza({ datos }) {
     const [visible, setVisible] = React.useState(false);
     const [normal, setNormal] = React.useState(true);
     const [visibleInputs, setVisibleInputs] = React.useState(false);
@@ -36,22 +36,34 @@ export default function Intervalo_de_confianza2({ datos }) {
                             textGradient: "45deg, $yellow600 -20%, $red600 100%",
                             textAlign:"center"
                         }}
-                        weight="bold">Datos de la Muestra 2</Text>
+                        weight="bold">Datos de la Muestra</Text>
                     <Spacer y={1} />
+                    <Grid.Container gap={2}  justify="center" alignItems="stretch">
+                        <Grid xs={3} justify="center" >
+                            <Switch shadow color="success" checked={normal} id="distribucion" onChange={(e) => setNormal(e.target.checked)} />
+                        </Grid>
+                        <Grid xs={9}>
+                            <Text h4 css={{textAlign:"center"}}>{normal == true ? "Distribucion Normal" : "Distribucion No Normal"}</Text>
+                        </Grid>
+                    </Grid.Container>
                     <Grid.Container gap={2}>
                         <Grid xs={6}>
-                        {datos.varianza2 ? (<Input id='desvio2' type="number" value={Math.sqrt(datos.varianza2)} label="Desvio(√varianza)"/>):(<Input id='desvio2' type="number" label="Desvio(√varianza)"/>)}
+                        {datos.varianza ? (<Input id='desvio' type="number" value={Math.sqrt(datos.varianza)} label="Desvio(√varianza)"/>):(<Input id='desvio' type="number" label="Desvio(√varianza)"/>)}
                         </Grid>
                         <Grid xs={6}>
-                        {datos.desvio2 ? (<Input id='varianza2' type="number" value={Math.pow(datos.desvio2,2)} label="Varianza"/>) : (<Input id='varianza2' type="number"  label="Varianza"/>)}
+                        {datos.desvio ? (<Input id='varianza' type="number" value={Math.pow(datos.desvio,2)} label="Varianza"/>) : (<Input id='varianza' type="number"  label="Varianza"/>)}
                         </Grid>
                     </Grid.Container>
                     <Spacer y={1} />
-                    {datos.valores.length !== 0 ? (<Input id='media2' type="number" value={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media2' type="number" label="Media de la muestra"/>)}
+                    {datos.valores.length !== 0 ? (<Input id='media' type="number" value={obtenerMedia()} label="Media de la muestra"/>):(<Input id='media' type="number" label="Media de la muestra"/>)}
                     <Spacer y={1} />
-                    {datos.valores.length !== 0 ? (<Input id='N2' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N2' type="number" label="Tamaño de muestra"/>)}
+                    {datos.valores.length !== 0 ? (<Input id='N' type="number" disabled value={datos.valores.length} label="Tamaño de muestra"/>):(<Input id='N' type="number" label="Tamaño de muestra"/>)}
                     <Spacer y={1} />
-                    {datos.confianza ? (<Input id='confianza2' type="number" disabled value={datos.confianza} label="Nivel de Confianza" />):(<Input id='confianza2' type="number" placeholder="Ej: 95" label="Nivel de Confianza" />)}
+                    <Input id='confianza' value={95} placeholder="Ej: 95" type="number" label="Nivel de Confianza" />
+                    <Spacer y={1} />
+                    {datos.confianza && datos.N <= 30? (<Button shadow color="success" auto onClick={handler}>
+                        Agregar Valores
+                    </Button>) : (<></>)}
                 </Card.Body>
             </Card>
             <Modal

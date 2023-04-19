@@ -9,7 +9,7 @@ export default function Result({ result }) {
     };
     return (
     <>
-        <Card isHoverable variant="bordered" css={{ mw: "500px" }} className="resultado">
+        <Card isHoverable variant="bordered" css={{ mw: "650px" }} className="resultado">
             <Card.Body>
 
                 <Text h1 size={40}
@@ -19,18 +19,25 @@ export default function Result({ result }) {
                     }}
                     weight="bold">Resultados</Text>
                 <Spacer y={1} />
-                {result.resultado ? (
-                    <>
-                    <Text blockquote css={{ textAlign: "center" }}>Se resuelve con {result.type}<hr />
+                {result.beta1 ? (
+                    <><Text blockquote css={{ textAlign: "center" }}>
                         <Spacer y={1} />
-                        {result.resultado.pasos.map((e,index) => (
-                            <div key={index}>
-                               <Text>{e}</Text>
-                               <Spacer y={1} />
-                            </div>
-                        ))}
-                        <Text>{result.resultado.resultado}</Text>
+                            <Text>Coeficiente de correlación múltiple (ρ) = {result.Rho.toFixed(5)}</Text>
+                        <Spacer y={1} />
+                            <Text>Coeficiente de Determinación (ρ²) = {result.RhoCuadrado}</Text>
+                        <Spacer y={1} />
+                            <Text>R² ajustado = {result.RhoCuadradoAjustado}</Text>
+                        <Spacer y={1} />
+                            <Text>Error típico = {result.ErrorTipico}</Text>
+                        <Spacer y={1} />
+                            <Text>𝛽¹ = {result.beta1}</Text>
+                        <Spacer y={1} />
+                            <Text>𝛽⁰ = {result.beta0}</Text>
+                        <Spacer y={1} />
+                            <Text>Observaciones = {result.N}</Text>
+                        
                     </Text>
+                        <Spacer y={1} />
                         <Button shadow color="gradient" auto onClick={handler}>
                             Ver formulas
                         </Button></>

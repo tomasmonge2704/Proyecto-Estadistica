@@ -8,7 +8,10 @@ function MyApp({ Component, pageProps }) {
   })
   
   const darkTheme = createTheme({
-    type: 'dark'
+    type: 'dark',
+    theme: {
+      colors: {backgroundContrast: '#070606'}
+    }
   })
   return (
     <NextThemesProvider

@@ -16,7 +16,7 @@ export default function NavBar ({page}) {
       const { isDark, type } = useTheme();
     return(
         <Navbar isBordered variant="static">
-        <Navbar.Toggle showIn="xs" />
+        <Navbar.Toggle showIn="xs" id="navbar-toggle"/>
         <Navbar.Brand
           css={{
             "@xs": {
@@ -30,6 +30,7 @@ export default function NavBar ({page}) {
           activeColor="secondary"
           hideIn="xs"
           variant="highlight-rounded"
+          id="navbar-content"
         >
        {collapseItems.map((item, index) => (
             <Navbar.Link href={item.href} key={index} isActive={page == item.href ? true : false }>{item.nombre}</Navbar.Link>
@@ -42,6 +43,7 @@ export default function NavBar ({page}) {
               jc: "flex-end",
             },
           }}
+          id="navbar-content2"
         >
             <Navbar.Item>
             <Switch
@@ -51,13 +53,14 @@ export default function NavBar ({page}) {
         size="xl"
         color="error"
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+        id="navbarSwich"
       />
             </Navbar.Item>
         </Navbar.Content>
-        <Navbar.Collapse>
+        <Navbar.Collapse id="navbar-collapse ">
           {collapseItems.map((item, index) => (
             <Navbar.CollapseItem
-              key={item.nombre}
+              key={index}
               activeColor="secondary"
               isActive={page == item.href ? true : false }
             >

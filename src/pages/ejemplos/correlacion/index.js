@@ -1,55 +1,33 @@
+import NavBar from "@/components/navbar/navBar";
 import { Card, Grid,Modal,Text,Row, useTheme,Link} from "@nextui-org/react";
-import img1 from "../../images/image004.png"
-import img2 from "../../images/proporcion.png"
-import img3 from "../../images/varianza.png"
-import img4 from "../../images/diferenciaMedias.png"
-import img5 from "../../images/diferenciaProporciones.png"
-import img6 from "../../images/estimarN.png"
 import React from "react";
 import isMobile from "is-mobile";
+import img1 from "../../images/datosXeY.png";
+import img2 from "../../images/datosIncompletos.png";
 
-export default function ModalTipoDeEstimacion() {
+export default function ModalCorrelacionLineal() {
     const list = [
         {
-            title: "Estimacion de la Media Poblacional",
-            href:"/confianza/media",
+            title: "Datos con tabla X e Y",
+            href:"/correlacion/datos",
             img: img1.src
         },
         {
-            title: "Estimacion del tamaño de Muestra",
-            href:"/confianza/N",
-            img: img6.src
-        },
-        {
-            title: "Estimacion de la Proporcion Poblacional",
-            href:"/confianza/proporcion-poblacional",
+            title: "Datos Incompletos",
+            href:"/correlacion/datos-incompletos",
             img: img2.src
-        },
-        {
-            title: "Estimacion de la Varianza",
-            href:"/confianza/varianza",
-            img: img3.src
         }
-        ,
-        {
-            title: "Estimacion de la Diferencia de Medias",
-            href:"/confianza/diferencia-medias",
-            img: img4.src
-        }
-        ,
-        {
-            title: "Estimacion de la Diferencia de Proporciones",
-            href:"/confianza/diferencia-proporciones",
-            img: img5.src
-        }
+    
     ];
     const { isDark, type } = useTheme();
     const [visible, setVisible] = React.useState(true);
     const closeHandler = () => {
         setVisible(false);
     };
-    return (
-        <Modal
+    return(
+        <>
+            <NavBar page={"/correlacion"}/>
+            <Modal
             blur
             preventClose
             aria-labelledby="modal-title"
@@ -61,7 +39,7 @@ export default function ModalTipoDeEstimacion() {
             <Modal.Header>
                 <Text id="modal-title" size={18}>
                     Tipo de
-                    <Text b size={18}> Estimacion</Text>
+                    <Text b size={18}> Datos</Text>
                 </Text>
             </Modal.Header>
             <Modal.Body>
@@ -75,7 +53,7 @@ export default function ModalTipoDeEstimacion() {
                                     }}
                                     href={item.href}
                                 >
-                                <Card isPressable isHoverable variant="bordered" >
+                                <Card isPressable isHoverable variant="bordered">
                                     <Card.Body css={{ p: 0 }}>
                                         <Card.Image
                                             src={item.img}
@@ -99,5 +77,6 @@ export default function ModalTipoDeEstimacion() {
             </Grid.Container>
             </Modal.Body>
         </Modal>
-    );
+        </>
+    )
 }
