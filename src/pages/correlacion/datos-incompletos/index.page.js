@@ -1,6 +1,6 @@
-import Logica from "./logica"
+import Logica from "@/components/datos-incompletos/logica";
 import { useState, useEffect } from "react";
-import Contenedor from "./contenedor";
+import Contenedor from "@/components/datos-incompletos/contenedor";
 export default function GetDatosIncompletos() {
     const [datos, setDatos] = useState({ distribucion: "Normal",intervalos:{confianza:[95,95,99,99],data:[
         {
