@@ -1,4 +1,4 @@
-import { calcularBeta0,calcularBeta1,obtenerConfianzaBeta0,obtenerConfianzaBeta0SinConfianza, obtenerConfianzaBeta1, obtenerConfianzaBeta1SinConfianza, obtenerEstadisticoT } from "./formulas";
+import { calcularBeta0,calcularBeta1,obtenerConfianzaBeta0,obtenerConfianzaBeta0SinConfianza, obtenerConfianzaBeta1, obtenerConfianzaBeta1SinConfianza, obtenerEstadisticoT } from "@/components/formulas/formulas";
 export default function Logica(datos) {    
     obtenerRho(datos)
     obtenerRhoCuadrado(datos)    
